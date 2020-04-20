@@ -18,7 +18,6 @@
   height: 100%;
   display: block;
   margin: 0 auto;
-  /* background-color: #e0e0e0; */
 }
 
 .logo_container{
@@ -86,11 +85,14 @@
 .quote{ 
   max-width: 100%;
   color:#035963;
-  display: block;
+  position: relative;
   margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 180px;
+  margin-bottom: 1.5em;
+  margin-left: 130px;
   margin-right: 40px;
+}
+.quote blockquote{
+  margin-top: 1.5em;
 }
 
 .quote span{
@@ -168,67 +170,60 @@
 
 .gallery-container{
   max-width: 100%;
-  width: 95%;
   margin:auto;
-  /* overflow: auto; */
+  padding-left: 10em;
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+}
+.gallery {
+  margin-left: 25px;
+  border: 1px solid #ccc;
+  width: 500px;
   position: relative;
-  left: 0;
-  bottom: 30px;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  margin:0px;
   align-items: center;
-  display: flex;
+  display: inline-block;
   justify-content: center;
 }
 
-.gallery{
+.gallery img {
   width: 100%;
-  margin: 0px;
-  border: 1px solid #ccc;
-  float: center;
+  height: auto;
+  max-width: 100%;
+  border: 1px solid #E0E0E0;
 }
-/* .galerry img{
-  max-width: 500px;
-  height:350px;
-  border: 0;
-  top: 0;
-} */
 
-.desc{
+.desc {
+  max-width: 100%;
   width: 100%;
   padding: 15px;
   text-align: left;
   color:#035963;
   font-size:1vw;
   font-family: 'Montserrat';
+  padding: 2px;
 
 }
 
 .text p{
-  width: 100%;
-  margin-top: 750px;
-  text-align: left;
-  margin-bottom: 0px;
-  margin-left: 20rem;
-  font-family: 'Montserrat';
-  font-size:20px;
+  max-width: 100%;
   color:#035963;
-  display: block;
-  /* margin-top: 1em; */
+  position: relative;
+  margin-top: 750px;
   margin-bottom: 1em;
-  margin-left: 100px;
+  margin-left: 130px;
   margin-right: 40px;
 }
 
-
 footer{
-  position: fixed;
+  max-width: 100%;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 50px;
   background-color: #E0E0E0;
-  padding:0px 0px 0px 0px;
+  /* padding:0px 0px 0px 0px; */
   margin: 0 auto;
   font-family: 'Montserrat';
   font-size: 20px;
@@ -238,14 +233,44 @@ footer{
 
 .footer-company-name{
   width: 100%;
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
 }
 
+@media screen and (max-width: 700px) {
+footer .footer-company-name{
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
 
-@media only screen and (min-width: 800px){
-  /* .slidershow .gallery-container{
-    width: 100%;
-  } */
+.quote p{
+  margin-top: 4em;
+  margin-left: -2.5em;
+}
+.quote blockquote{
+  margin-left: -2.5em;
+}
+.text{
+  margin-left: -3.5em;
+}
+.slidershow{
+  width: 90%;
+  margin-top: 6em;
+} 
+
+.slidershow{ 
+  width: 100%;
+  margin:0;
+  border:none;
+  margin-bottom: 0.5em;
+  margin-top: 9em;
+}
+.gallery-container{
+  margin-left: 5px;
+  padding-left: 2em;
+  padding-right: 2em;
+}
 }
