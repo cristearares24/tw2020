@@ -1,0 +1,276 @@
+*{
+  margin:0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.header{
+  width: 100%;
+  height: 90px;
+  display: inline-block;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.inner_header{
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.logo_container{
+  max-width:100%;
+  height: 100%;
+  display: table;
+  float: left;
+}
+
+.logo_container h1{
+  max-width: 100%;
+  color: #FAA916;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: 'Montserrat';
+  font-size: 35px;
+  font-weight: 200;
+}
+
+.logo_container h1 span{
+  max-width: 100%;
+  font-weight: 1000;
+}
+
+.logo_container img{
+  max-width: 100%;
+  height: 69px;
+  float: middle;
+  padding: 10px 0px;
+}
+
+.nav {
+  max-width: 100%;
+  float: left;
+  height: 80px;
+  padding: 10px 0px 20px 20px;
+}
+
+.nav a{
+  max-width: 100%;
+  height: 80px;
+  display:table;
+  float: left;
+  padding: 0px 20px;
+}
+
+.nav a li{
+  max-width: 100%;
+  display :table-cell;
+  vertical-align: middle;
+  height: 90px;
+  color:#FAA916;
+  font-family: 'Montserrat';
+  font-size: 20px;
+}
+
+ body{
+  max-width: 100%;
+  margin:0;
+  padding:0;
+  background-color: #CED0CE;
+}
+
+.quote{ 
+  max-width: 100%;
+  color:#210124;
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  margin-left: 130px;
+  margin-right: 40px;
+}
+.quote blockquote{
+  margin-top: 1.5em;
+}
+
+.quote span{
+  font-size: 25px;
+}
+.search-box{
+  max-width: 100%;
+  position: absolute;
+  top: 5%;
+  left:85%; 
+  transform: translate(-50%,-50%);
+  background: #FAA916;
+  height: 40px;
+  border-radius: 40px;
+  padding:10px;
+}
+.search-box:hover > .search-txt{
+  max-width: 100%;
+  width: 240px;
+  padding: 0 6px;
+}
+.search-box:hover > .search-btn{
+  background: white;
+}
+
+.search-btn{
+  max-width: 100%;
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FAA916;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.search-txt{
+  max-width: 100%;
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color:white;
+  font-size: 20px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+.slidershow{
+  max-width: 100%;
+  width: 95%;
+  height: 700px;
+  position: absolute;
+  left:50%;
+  top: 60%;
+  transform: translate(-50%,-50%);
+  background-image: url(images/1.jpg);
+  background-size: 100% 100%;
+  box-shadow: 1px 2px 10px 5px white;
+  animation: slider 12s infinite linear;
+}
+
+@keyframes slider{
+  0% {background-image: url(images/1.jpg);}
+  25% {background-image: url(images/2.jpg);}
+  50% {background-image: url(images/3.jpg);}
+  75% {background-image: url(images/4.jpg);}
+  100% {background-image: url(images/5.jpg);}
+}
+
+.gallery-container{
+  max-width: 100%;
+  margin:auto;
+  padding-left: 10em;
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+}
+.gallery {
+  margin-left: 25px;
+  border: 1px solid #ccc;
+  width: 500px;
+  position: relative;
+  margin:0px;
+  align-items: center;
+  display: inline-block;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border: 1px solid #E0E0E0;
+}
+
+.desc {
+  max-width: 100%;
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  color:#210124;
+  font-size:1vw;
+  font-family: 'Montserrat';
+  padding: 2px;
+
+}
+
+.text p{
+  max-width: 100%;
+  color:#210124;
+  position: relative;
+  margin-top: 750px;
+  margin-bottom: 1em;
+  margin-left: 130px;
+  margin-right: 40px;
+}
+
+footer{
+  max-width: 100%;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #E0E0E0;
+  /* padding:0px 0px 0px 0px; */
+  margin: 0 auto;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  color: #f9b10b;
+  text-align: left;
+}
+
+.footer-company-name{
+  width: 100%;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 700px) {
+footer .footer-company-name{
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.quote p{
+  margin-top: 4em;
+  margin-left: -2.5em;
+}
+.quote blockquote{
+  margin-left: -2.5em;
+}
+.text{
+  margin-left: -3.5em;
+}
+.slidershow{
+  width: 90%;
+  margin-top: 6em;
+} 
+
+.slidershow{ 
+  width: 100%;
+  margin:0;
+  border:none;
+  margin-bottom: 0.5em;
+  margin-top: 9em;
+}
+.gallery-container{
+  margin-left: 5px;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+}
