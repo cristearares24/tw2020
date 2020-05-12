@@ -29,7 +29,7 @@
 
 .logo_container h1{
   max-width: 100%;
-  color: #FAA916;
+  color: #4CAF50;
   height: 100%;
   display: table-cell;
   vertical-align: middle;
@@ -70,7 +70,7 @@
   display :table-cell;
   vertical-align: middle;
   height: 90px;
-  color:#FAA916;
+  color:#4CAF50;
   font-family: 'Montserrat';
   font-size: 20px;
 }
@@ -81,7 +81,7 @@
   top: 5%;
   left:85%; 
   transform: translate(-50%,-50%);
-  background: #FAA916;
+  background: #4CAF50;
   height: 40px;
   border-radius: 40px;
   padding:10px;
@@ -92,7 +92,7 @@
   padding: 0 6px;
 }
 .search-box:hover > .search-btn{
-  background: white;
+  background: #4CAF50;
 }
 
 .search-btn{
@@ -102,7 +102,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #FAA916;
+  background: #4CAF50;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,4 +231,61 @@ body{
 {
 	font-weight: bold;
 	font-size: 10px;
+}
+
+
+.container {
+  width: 100%;
+  margin-top: 30px;
+}
+h1{
+	text-align: center;
+  padding: 5px; 
+}
+.progressbar {
+  counter-reset: step;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.progressbar li {
+  list-style: none;
+  display: inline-block;
+  width: 15%;
+  position: relative;
+  text-align: center;
+ color: red;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-top:3%;
+  margin-bottom: 3%;
+}
+.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 50px;
+  height: 50px;
+  line-height : 50px;
+  border: 3px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 100%;
+  display: block;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  background-color: #fff;
+  z-index: -1;
+}
+.progressbar li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #565264;
+  top: 25%;
+  left: -50%;
+  z-index : -1;
+}
+.progressbar li:first-child:after {
+  content: none;
 }

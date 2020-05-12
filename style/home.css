@@ -154,18 +154,18 @@
   left:50%;
   top: 60%;
   transform: translate(-50%,-50%);
-  background-image: url(images/1.jpg);
+  background-image: url(../images/1.jpg);
   background-size: 100% 100%;
   box-shadow: 1px 2px 10px 5px white;
   animation: slider 12s infinite linear;
 }
 
 @keyframes slider{
-  0% {background-image: url(images/1.jpg);}
-  25% {background-image: url(images/2.jpg);}
-  50% {background-image: url(images/3.jpg);}
-  75% {background-image: url(images/4.jpg);}
-  100% {background-image: url(images/5.jpg);}
+  0% {background-image: url(../images/1.jpg);}
+  25% {background-image: url(../images/2.jpg);}
+  50% {background-image: url(../images/3.jpg);}
+  75% {background-image: url(../images/4.jpg);}
+  100% {background-image: url(../images/5.jpg);}
 }
 
 .gallery-container{
