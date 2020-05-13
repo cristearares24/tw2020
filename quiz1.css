@@ -92,7 +92,7 @@
     padding: 0 6px;
   }
   .search-box:hover > .search-btn{
-    background: #4CAF50;
+    background: whi4CAF50te;
   }
   
   .search-btn{
@@ -129,62 +129,46 @@
     padding:0;
     background-color: #CED0CE;
   }
+    h1 {
+        text-align: center;
+    }
+    .button 
+    {
+        
+        width: 80px;
+        height: 25px;
+        text-align: center;
+        float:right;
+        background-color: #fff;
+        margin: 0 2px 0 2px;
+        cursor: pointer;
+    }
+    .button a 
+    {
+        text-decoration: none;
+        color: #555;
+        line-height: 25px;
+    }
+    #container 
+    {
+        width:50%;
+        margin: 150px auto;
+        padding: 50px 30px;
+        background-color: #565264;
+        border-radius:3px;
+        color: #fff;
+        box-shadow: 0 0 10px 0 #999;
+    }
 
-  .content{
-    padding-left: 20%;
-    padding-right:20%;
-    padding-top:2%;
-  }
-  
-  .title{
-    padding-top:1%;
-    padding-bottom:1%;
-  padding-left:2%;
-  border-color: #000;
-  border-radius:15px;
-  font-size:20pt;
-  background-image: linear-gradient(to left,#d9d9d9, #FAA916);;
-  }
-  
-  .buton{
-    width: 120px;
-    height: 55px;
-    margin-left: 45%;
-    margin-right: 45%
-  }
-
-  .continut
-  {
-    background-color:#E6E6FA;
-    padding-top:1%;
-    padding-bottom:1%;
-  padding-left:2%;
-  padding-right:2%;
-  text-indent: 4%;
-  text-align:justify;
-  margin-bottom: 2%;
-  border-color: black;
-  border-radius:15px;
-  }
-  
-
-  #text
-  {
-    width: 90%;
-  height: 20%;
-  }
-  
-  .btn {
-    border: none;
-    background-color: gray;
-    padding: 10px 28px;
-    font-size: 16px;
-    position: absolute; 
-    left:70%;
-    border-radius: 12px;
-  }
-
-  .btn:hover {
-    background-color: #4CAF50;
-    color: white;
-  }
+    #prev 
+    {
+        display:none;
+    }
+    #start 
+    {
+        display:none;
+        width: 100px;
+    }
+    input[type="radio"]{
+        cursor: pointer;
+    }
