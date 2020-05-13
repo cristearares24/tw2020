@@ -1,0 +1,155 @@
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+ #name{
+  font-weight: bold;
+  font-size: 1.8vw;
+  padding: 0.5vw;
+}
+
+#pass{
+  font-weight: bold;
+  font-size: 1.8vw;
+  padding: 0.5vw;
+} 
+
+label{
+  font-size: 1.1vw;
+}
+
+button {
+  background-color: #4db6ac;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30vw;
+  font-size: 1.8vw;
+
+}
+
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+.container {
+  background-color: #ffffff;
+  padding: 2vw 2vw;
+  width: 30vw;
+  margin: auto;
+  border-radius: 15px;
+  font-family: sans-serif;
+  margin-top: 10vw;
+  justify-content: center;
+  
+}
+
+@media only screen and (max-width: 600px){
+  button{
+    width: 60vw;
+    font-size: 3vw;
+  }
+ .container{
+    margin-top: 50%;
+    width: 60vw;
+    padding: 3vw 6vw;
+
+  }
+  #name
+  {
+    font-size: 3vw;
+  }
+  
+  #pass{
+    font-size: 3vw;
+  } 
+  
+  label{
+    font-size: 2.3vw;
+  }
+}
+
+ body {
+  background-image: url("log4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  border: 0;
+  } 
+  
+  .logoHeader {
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: auto;
+  } 
+
+
+  .antet {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 3.7em;
+    /* height: 3.7vw; */
+    margin: auto;
+    align-items: center;
+   background-image: linear-gradient(to right, #071731, #132d57, #071731);
+   background-position: top;
+  }
+
+  #fii
+  {
+      width: auto;
+      height: 100%;      
+  }
+
+  #univ
+  {
+      width: auto;
+      height: 90%;
+  }
+
+
+#titlu{
+    font-size: 3vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+  }
+  
+@media only screen and (max-width: 600px){
+  
+  #fii
+  {
+      width: auto;
+      height: 10vw;      
+  }
+
+  #univ
+  {
+      width: auto;
+      height: 10vw;
+  }
+
+#titlu{
+    font-size: 3.5vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+  }
+}

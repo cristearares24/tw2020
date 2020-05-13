@@ -75,6 +75,7 @@
   font-size: 20px;
 }
 
+
 .search-box{
   max-width: 100%;
   position: absolute;
@@ -130,105 +131,49 @@ body{
   background-color: #CED0CE;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 0.2fr 1fr 0.2fr 1fr 0.2fr;
-  grid-template-rows: 0.5fr 0.5fr 2fr 0.5fr 0.5fr 2fr 1fr;
-  grid-template-areas: ". . . . ." ". Nume . Nume ." ". Continut . Continut ." ". . . . ." ". Nume . Nume ." ". Continut . Continut ." ". . . . .";
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: 0.2fr 1fr 0.2fr 1fr 0.2fr;
-  grid-template-rows: 0.5fr 0.5fr 2fr 0.5fr 0.5fr 2fr 1fr;
-  grid-template-areas: ". . . . ." ". t1 . t2 ." ". t1 . t2 ." ". . . . ." ". t3 . t4 ." ". t3 . t4 ." ". . . . .";
+.content{
+  padding-left: 20%;
+  padding-right:20%;
+  padding-top:2%;
 }
 
-.Nume { grid-area: Nume; }
-
-.Continut {
- grid-area: Continut; 
- list-style: none;
-}
-.t1 {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas: "Nume" "Continut";
-  grid-area: t1;
-}
-.t2 {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas: "Nume" "Continut";
-  grid-area: t2;
+.title{
+  padding-top:1%;
+  padding-bottom:1%;
+padding-left:2%;
+border-color: #000;
+border-radius:15px;
+font-size:20pt;
+background-image: linear-gradient(to left,#d9d9d9, #FAA916);;
 }
 
-.t3 {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas: "Nume" "Continut";
-  grid-area: t3;
-}
-.t4 {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas: "Nume" "Continut";
-  grid-area: t4;
+.buton{
+  width: 120px;
+  height: 55px;
+  margin-left: 45%;
+  margin-right: 45%
 }
 
-.continutstyle
+.continut
 {
-	position: relative;
-	background-color: #d9d9d9;
-	border-radius: 15px;
-	margin: 5px;
-}
-.continut ul
-{
-	list-style-type: none;
-
-}
-.continut li
-{
-		padding-top: 5px;
-		padding-right: 10px;
-		font-size: 20px;
+  background-color:#E6E6FA;
+  padding-top:1%;
+  padding-bottom:1%;
+padding-left:2%;
+padding-right:2%;
+text-indent: 4%;
+text-align:justify;
+margin-bottom: 2%;
+border-color: black;
+border-radius:15px;
 }
 
-
-.morebtn
-{
-	text-align: right;
-	color:#FAA916;
-	position: absolute;
-	right: 0%;
-	bottom: 0px;
-	width: 100%;
-	font-weight: bold;
+ul {
+  list-style-type: circle;
 }
 
-.Continut span
+#text
 {
-		font-size: 20px;
-
-}
-.tutorial{
-	text-align: left;
-	background-color:#565264;
-	border-radius: 15px;
-}
-.tutorial p{
-	font-weight: bold;
-	text-align: center;
-	font-size: 23px;
-	color: white;
-	padding: 1em;
-}
-.textdeco
-{
-	font-weight: bold;
-	font-size: 10px;
+  width: 90%;
+height: 20%;
 }

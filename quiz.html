@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style/myProfile.css">
+        <link rel="stylesheet" type="text/css" href="quiz.css">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="HandheldFriendly" content="true">
@@ -23,9 +23,12 @@
                 <li>Tutoriale</li>
               </a>
               <a href="myProfile.html">
+                <li>Unelte</li>
+              </a>
+              <a href="myProfile.html">
                 <li>Profilul meu</li>
               </a>
-              <a href="#">
+              <a href="login.html">
                 <li>Deconectare</li>
               </a>
             </ul>
@@ -40,50 +43,28 @@
       </head>
 
 <body>
-    <div class="profile-card">
-        <div class="image-container">
-            <img src="images/profile1.jpg" style="width:100% " alt="">
-            <div class="title">
-                <h2>Jane Dare</h2>
-            </div>
-        </div>
-        <div class="main-container">
-            <p class="info">Details about me </p>
-            <hr>
+   
+  <div id="heading"><h1 id="text">Etapele amenajarii unei gradini sau curti<h1></div>
+    <div id="quiz">
+      <div id="question"></div>
+      <label class="option"><input type="radio" name="option" value="1" /><span id="option1"></span></label>
+      <label class="option"><input type="radio" name="option" value="2" /><span id="option2"></span></label>
+      <label class="option"><input type="radio" name="option" value="3" /><span id="option3"></span></label>
+      <label class="option"><input type="radio" name="option" value="4" /><span id="option4"></span></label>
+      <button id="next" onclick="nextques();">Urmatoarea intrebare</button>
+    </div>
+    <div id="result" style="display:none">
+    </div>
+    <button id="quit" onclick="quit();">Quit</button>
+    <script type="text/javascript" src="questions.js"></script>
+<script type="text/javascript" src="main.js"></script>
 
-            <p class="info"><i class="fas fa-home"></i> Iasi, RO</p>
-            <p class="info"><i class="fas fa-envelope-square"></i> janedare@gmail.com </p>
-            <p class="info"><i class="fas fa-phone"></i> 0745 219 320</p>
-        </div>
-    </div>
-    <div class="progress-card">
-        <p><b><i class="fas fa-asterisk"></i> Progress</b></p>
-        <hr><br>
-        <p>My flower garden</p>
-        <div class="skill-bar">
-            <div class="progress-bar" style="width:80%"> 80% </div>
-        </div>
-        <p>My private space</p>
-        <div class="skill-bar">
-            <div class="progress-bar" style="width:50%"> 50% </div>
-        </div>
-        <p>All about trees </p>
-        <div class="skill-bar">
-            <div class="progress-bar" style="width:30%"> 30% </div>
-        </div>
-        <p>My balcony</p>
-        <div class="skill-bar">
-            <div class="progress-bar" style="width:10%"> 10% </div>
-        </div>
-        <p>Quiz</p>
-        <div class="skill-bar">
-            <div class="progress-bar" style="width:10%"> 10% </div>
-        </div>
-    </div>
-    <footer>
+
+  <footer>
         <div>
             <p class="footer-company-name">Gardening Web Tutor © 2020</p>
         </div>
+        
     </footer>
 </body>
 </html>
