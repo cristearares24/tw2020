@@ -152,7 +152,7 @@
   height: 700px;
   position: absolute;
   left:50%;
-  top: 60%;
+  top: 65%;
   transform: translate(-50%,-50%);
   background-image: url(../images/1.jpg);
   background-size: 100% 100%;
@@ -237,8 +237,32 @@ footer{
   left: 0;
   bottom: 0;
 }
+@media screen and (max-width:1200px){
+  footer .footer-company-name{
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  
+.quote p{
+  margin-top: 5em;
+  margin-left: -2.5em;
+}
+.quote blockquote{
+  margin-left: -2.5em;
+}
+.slidershow{
+  margin-top: 4.5em;
+}
+.gallery-container{
+  margin-left: 6em;
+ 
+}
+}
 
-@media screen and (max-width: 700px) {
+
+@media screen and (max-width: 800px) {
 footer .footer-company-name{
   display: block;
   position: relative;
@@ -256,21 +280,52 @@ footer .footer-company-name{
 .text{
   margin-left: -3.5em;
 }
-.slidershow{
-  width: 90%;
-  margin-top: 6em;
-} 
 
 .slidershow{ 
   width: 100%;
   margin:0;
   border:none;
   margin-bottom: 0.5em;
-  margin-top: 9em;
+  margin-top: 5.5em;
 }
 .gallery-container{
-  margin-left: 5px;
+  margin-left: 6em;
   padding-left: 2em;
   padding-right: 2em;
 }
 }
+@media screen and (max-width: 750px) {
+.slidershow{
+  height: 650px;
+  margin-top: 10em;
+}
+footer .footer-company-name{
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.quote p{
+  margin-top: 10em;
+  margin-left: -2.5em;
+}
+.quote blockquote{
+  margin-left: -2.5em;
+}
+.gallery-container{
+  margin-left: 3em;
+}
+
+}
+
+@media screen and (max-width: 600px) {
+  .gallery-container{
+    margin-left: 0em;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .slidershow{
+    top:67%;
+  }
+}
+
