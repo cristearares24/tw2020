@@ -1,46 +1,25 @@
-<!DOCTYPE html>
-<html lang="ro">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="./home.css">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="HandheldFriendly" content="true">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  <title>Ghid pentru curți și grădini</title>
-  <div class="header">
-    <div class="inner_header">
-      <div class="logo_container">
-        <img src="./images/gardening.png" alt="logo" />
-        <h1><span>Ghid</span> curți și grădini</h1>
-      </div>
-      <ul class="nav">
-        <a href="./home.html">
-          <li>Acasă</li>
-        </a>
-        <a href="./tutoriale.html">
-          <li>Tutoriale</li>
-        </a>
-        <a href="./myProfile.html">
-          <li>Profilul meu</li>
-        </a>
-        <a href="./unelte.html">
-          <li>Unelte</li>
-        </a>
-        <a href="./login.html">
-          <li>Deconectare</li>
-        </a>
-      </ul>
-      <div class="search-box">
-        <input class="search-txt" type="text" name="" placeholder="Type to search">
-        <a class="search-btn" href="#">
-          <i class="fas fa-search"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</head>
+require "header.php";
+
+?>
+
+
+<main>
+<?php
+// if (isset($_SESSION['userId']))
+// {
+//     // echo '<p>You are logged in!</p>';
+
+// }
+// else
+// {
+//     // echo '<p>You are logged out!</p>';
+// }
+?>
+
+
+</main>
 
 <body>
   <div class="quote">
@@ -50,10 +29,12 @@
         neintinat de lume.”</i>
       <b>Buddha</b></blockquote>
   </div>
+  <p>
   <div class="slidershow">
 
   </div>
 
+</p>
   <div class="text">
     <p>Gradina este locul pe care poti sa il transformi intr-un loc de poveste, cu un design deopotriva indraznet si
       practic.<br>
@@ -64,7 +45,7 @@
   <div class="gallery-container">
 
     <div class="gallery">
-      <img src="./images/8.jpg" alt="Cinque Terre" width="600" height="400">
+      <img src="../images/8.jpg" alt="Cinque Terre" width="600" height="400">
       <div class="desc"><b> Pompe de apă robuste și fiabile</b>
         <hr><br>
         <p style="font-size: 16px;">Acum, nu mai este necesar să vă aplecați pentru a strânge fructele căzute pe
@@ -74,7 +55,7 @@
     </div>
 
     <div class="gallery">
-      <img src="./images/9.jpg" alt="Forest" width="600" height="400">
+      <img src="../images/9.jpg" alt="Forest" width="600" height="400">
       <div class="desc"> <b>Strângerea fructelor căzute pe sol </b>
         <hr><br>
         <p style="font-size: 16px;">Pompele de apă duc apa acolo unde aveți nevoie de ea, când aveți nevoie de
@@ -84,7 +65,7 @@
     </div>
 
     <div class="gallery">
-      <img src="./images/10.jpg" alt="Northern Lights" width="600" height="400">
+      <img src="../images/10.jpg" alt="Northern Lights" width="600" height="400">
       <div class="desc"> <b>Tăiere comodă</b>
         <hr><br>
         <p style="font-size: 16px;">Tăiați gardul viu înalt în siguranță, de la sol, cu trimmerul telescopic de gard
@@ -92,11 +73,9 @@
       </div>
     </div>
   </div>
-  <footer>
-    <div>
-      <p class="footer-company-name">Gardening Web Tutor © 2020</p>
-    </div>
-  </footer>
 </body>
+<?php
 
-</html>
+require "footer.php";
+
+?>

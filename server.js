@@ -57,8 +57,8 @@ const server = http.createServer(function (req, res) {
             res.end(html);
         });
     }
-    else if (req.url === "/login.html") {
-        fs.readFile("login.html", "UTF-8", function (err, html) {
+    else if (req.url === "/loginForm.html") {
+        fs.readFile("loginForm.html", "UTF-8", function (err, html) {
             res.writeHead(200, { "Content-Type": "text/html" });
             res.end(html);
         });
