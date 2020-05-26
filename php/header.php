@@ -24,7 +24,7 @@ session_start();
         <a href="./index.php">
           <li>Acasă</li>
         </a>
-        <a href="../tutoriale.html">
+        <a href="./tutoriale.php">
           <li>Tutoriale</li>
         </a>
         <a href="./myProfile.php">
@@ -45,7 +45,7 @@ session_start();
           }
           else {
               echo '<a href="./login.php">
-              <li>Conectare/Inregistrare</li>
+              <li>Conectare</li>
             </a>';
           }
       ?>
