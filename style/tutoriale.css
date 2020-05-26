@@ -183,8 +183,9 @@ body{
 {
 	position: relative;
 	background-color: #d9d9d9;
-	border-radius: 15px;
-	margin: 5px;
+	border-radius: 10px;
+  margin: 5px;
+  padding: 2%;
 }
 .continut ul
 {
@@ -198,13 +199,12 @@ body{
 		font-size: 20px;
 }
 
-
 .morebtn
 {
 	text-align: right;
 	color:#FAA916;
 	position: absolute;
-	right: 0%;
+  right: 1%;
 	bottom: 0px;
 	width: 100%;
 	font-weight: bold;
@@ -233,11 +233,11 @@ body{
 	font-size: 10px;
 }
 
-
 .container {
   width: 100%;
   margin-top: 30px;
 }
+
 h1{
 	text-align: center;
   padding: 5px; 
@@ -253,7 +253,7 @@ h1{
   width: 15%;
   position: relative;
   text-align: center;
- color: red;
+ color: black;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 15px;
@@ -288,4 +288,115 @@ h1{
 }
 .progressbar li:first-child:after {
   content: none;
+}
+
+
+
+
+@media screen and (max-width: 970px)
+{
+  /* .jumbotron h1{
+       font-size: 18pt;
+  } */
+  h1{
+    font-size: 15pt;
+  }
+  .continutstyle p {
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+ }
+  .Continut li
+  {
+    padding-top: 5px;
+    font-size: 15px;
+  }
+  .Continut span {
+  font-size: 15px;
+  }
+
+  .Continut ul{
+    padding-left: 1.5em;
+  }
+   .grid-container{
+       /* grid-template-rows: 0.1fr 1.2fr 0.1fr 0.9fr 0.1fr 1.2fr 0.1fr; */
+       grid-template-rows: 0.1fr 1.2fr 0.1fr 0.1fr 0.1fr 0.9fr 0.1fr;
+
+   }
+
+   .progressbar li{
+       font-size:10px;
+   }
+
+   .progressbar li:before {
+ content: counter(step);
+ counter-increment: step;
+ width: 30px;
+   height: 30px;
+   line-height:30px;
+   }
+   /* h1.titlu
+   {
+       font-size:12pt;
+   }
+   h1.titlu1
+   {
+       font-size:12pt;
+   } */
+   .Nume p{
+    font-size: 15pt;
+  }
+
+}
+@media screen and (max-width: 635px )
+{
+  .continutstyle p {
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  }
+  .Continut li{
+    padding-top: 2px;
+    font-size: 10px;
+  }
+
+  .Continut span {
+  font-size: 10px;
+  }
+
+  .Nume p{
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 450px)
+{
+  .progressbar li{
+    font-size:7px;
+  }
+
+  .grid-container{
+    grid-template-rows: 0.1fr 1.2fr 0.1fr 0.1fr 0.1fr 0.9fr 0.1fr;
+}
+
+  h1{
+  font-size: 10pt;
+  }
+
+  li{
+  font-size: 8pt;
+  }
+
+.Nume p{
+  font-size: 10pt;
+}
+
+.morebtn
+{
+  font-size: 6pt;
+  right:2%;
+
+}
 }
