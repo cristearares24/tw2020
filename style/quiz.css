@@ -1,0 +1,284 @@
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .header{
+    width: 100%;
+    height: 90px;
+    display: inline-block;
+    background-color: white;
+    margin: 0 auto;
+  }
+  
+  .inner_header{
+    width: 80%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .logo_container{
+    max-width:100%;
+    height: 100%;
+    display: table;
+    float: left;
+  }
+  
+  .logo_container h1{
+    max-width: 100%;
+    color: #4CAF50;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Montserrat';
+    font-size: 35px;
+    font-weight: 200;
+  }
+  
+  .logo_container h1 span{
+    max-width: 100%;
+    font-weight: 1000;
+  }
+  
+  .logo_container img{
+    max-width: 100%;
+    height: 69px;
+    float: middle;
+    padding: 10px 0px;
+  }
+  
+  .nav {
+    max-width: 100%;
+    float: left;
+    height: 80px;
+    padding: 10px 0px 20px 20px;
+  }
+  
+  .nav a{
+    max-width: 100%;
+    height: 80px;
+    display:table;
+    float: left;
+    padding: 0px 20px;
+  }
+  
+  .nav a li{
+    max-width: 100%;
+    display :table-cell;
+    vertical-align: middle;
+    height: 90px;
+    color:#4CAF50;
+    font-family: 'Montserrat';
+    font-size: 20px;
+  }
+  
+  .search-box{
+    max-width: 100%;
+    position: absolute;
+    top: 5%;
+    left:85%; 
+    transform: translate(-50%,-50%);
+    background: #4CAF50;
+    height: 40px;
+    border-radius: 40px;
+    padding:10px;
+  }
+  .search-box:hover > .search-txt{
+    max-width: 100%;
+    width: 240px;
+    padding: 0 6px;
+  }
+  .search-box:hover > .search-btn{
+    background: whi4CAF50te;
+  }
+  
+  .search-btn{
+    max-width: 100%;
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #4CAF50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+  }
+  
+  .search-txt{
+    max-width: 100%;
+    border:none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color:white;
+    font-size: 20px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+  }
+  
+  body{
+    max-width: 100%;
+    margin:0;
+    padding:0;
+    background-color: #CED0CE;
+  }
+    h1 {
+        text-align: center;
+    }
+
+    .buton{
+        width: 95px;
+        height: 40px;
+        margin-left: 45%;
+        margin-right: 45%;
+        margin: 0 auto;
+        display: block;
+      }
+    #container 
+    {
+        width:50%;
+        margin: 58px auto;
+        padding: 30px 30px;
+        background-color: #565264;
+        border-radius:3px;
+        color: #fff;
+        box-shadow: 0 0 10px 0 #999;
+    }
+
+    li{
+        padding-top: 3%;
+    }
+    /* input[type="radio"]{
+        cursor: pointer;
+    } */
+
+    @media screen and (max-width: 1130px)
+    {
+        h1{
+            font-size: 30px;
+        }
+        .quiz{
+            font-size: 15px;
+        }
+    }
+
+    @media screen and (max-width: 1055px)
+    {
+        h1{
+            font-size: 28px;
+        }
+        .quiz{
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (max-width: 985px)
+    {
+        h1{
+            font-size: 25px;
+        }
+        .quiz{
+            font-size: 13px;
+        }
+
+        .buton{
+            width: 90px;
+            height: 35px;
+            font-size: 13px;
+        
+          }
+    }
+
+    @media screen and (max-width: 885px)
+    {
+        h1{
+            font-size: 22px;
+        }
+        .quiz{
+            font-size: 12px;
+        }
+        .buton{
+            width: 85px;
+            height: 30px;
+            font-size: 12px;
+        
+          }
+    }
+
+    @media screen and (max-width: 775px)
+    {
+        h1{
+            font-size: 20px;
+        }
+        .quiz{
+            font-size: 11px;
+        }
+        .buton{
+            width: 75px;
+            height: 20px;
+            font-size: 11px;
+        
+          }
+    }
+
+    @media screen and (max-width: 705px)
+    {
+        h1{
+            font-size: 18px;
+        }
+        .quiz{
+            font-size: 10px;
+        }
+        .buton{
+            width: 70px;
+            font-size: 10px;
+        
+          }
+    }
+
+    @media screen and (max-width: 635px)
+    {
+        h1{
+            font-size: 17px;
+
+    }}
+
+    @media screen and (max-width: 600px)
+    {
+        h1{
+            font-size: 16px;
+        }
+        .buton{
+            width: 60px;
+        
+          }
+        }
+
+    @media screen and (max-width: 435px)
+    {
+        h1{
+            font-size: 15px;}
+            .buton{
+                width: 55px;
+            
+              }
+
+    }
+
+    @media screen and (max-width: 375px)
+    {
+        h1{
+            font-size: 14px;}
+            .buton{
+                width: 50px;
+            
+              }
+
+    }
