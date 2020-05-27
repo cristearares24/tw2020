@@ -13,6 +13,12 @@ require "header.php";
 </head>
 
 <body>
+  <?php
+  // $userID = $_SESSION["userID"];
+  //  $rezultate = mysqli_query($conn, "select score from quizresults where quizID = $quizID and userID = $userID");
+  //  $rezultate = mysqli_fetch_array($rezultate);
+  //  $rezultate = $rezultate["score"];
+  ?>
 
   <div class="content">
     <div class="container">
@@ -40,7 +46,7 @@ require "header.php";
               sisteme de iluminat, trasee de apa si alte facilitati obligatorii intr-o gradina, finalizandu-se cu mici
               finisaje.
             </li>
-            <li class="morebtn"><a href="./tutorial1.php" class="morebtn">Deschide tutorialul</a>
+            <li class="morebtn"><a href="./tutorial.php?tutorialID=1" class="morebtn">Deschide tutorialul</a>
             <li>
           </ul>
         </div>
@@ -55,7 +61,7 @@ require "header.php";
             <li><span class="textdeco">Descriere: </span> Amenajarea gradinii incepe cu stabilirea modului in care vrei
               sa folosesti ulterior spatiul respectiv, ca loc pentru relaxare sau ca loc unde sa plantezi si sa cresti
               legume proaspete si delicioase.</li>
-            <li class="morebtn"><a href="./tutorial4.php" class="morebtn">Deschide tutorialul</a>
+            <li class="morebtn"><a href="./tutorial.php?tutorialID=4" class="morebtn">Deschide tutorialul</a>
             <li>
 
           </ul>
@@ -71,7 +77,7 @@ require "header.php";
             <li><span class="textdeco">Descriere: </span> Spatiul exterior al casei tale poate fi amenajat asa cum iti
               doresti, indiferent de marimea acestuia. Aici regasesti cateva idei de gradini amenajate in diferite
               stiluri, din care poti sa iti alegi proiectul preferat! </li>
-            <li class="morebtn"><a href="./tutorial3.php" class="morebtn">Deschide tutorialul</a>
+            <li class="morebtn"><a href="./tutorial.php?tutorialID=3" class="morebtn">Deschide tutorialul</a>
             <li>
           </ul>
         </div>
@@ -88,7 +94,7 @@ require "header.php";
               secretele amenajarii unei curti sau gradini speciale, fie ca vorbim despre spatiu restrans, de teren in
               panta sau nisipos, fie doar despre gradini care necesita minim efort in intretinere, pentru oameni
               ocupati.</li>
-            <li class="morebtn"><a href="./tutorial2.php" class="morebtn">Deschide tutorialul</a>
+            <li class="morebtn"><a href="./tutorial.php?tutorialID=2" class="morebtn">Deschide tutorialul</a>
             <li>
           </ul>
         </div>
