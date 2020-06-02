@@ -12,22 +12,46 @@ require "header.php";
     <title>Tutoriale</title>
 </head>
 
-<body>
-  <?php
-  // $userID = $_SESSION["userID"];
-  //  $rezultate = mysqli_query($conn, "select score from quizresults where quizID = $quizID and userID = $userID");
-  //  $rezultate = mysqli_fetch_array($rezultate);
-  //  $rezultate = $rezultate["score"];
-  ?>
+<?php
+require 'dbconnection.php';
+?>
 
-  <div class="content">
+<body>
+<div class="content">
     <div class="container">
       <h1>Progresul tutorialelor</h1>
       <ul class="progressbar" id="progress">
-        <li class="prog" id="p1">Care sunt etapele amenajarii unei gradini sau curti</li>
-        <li class="prog" id="p2">Cum amenajezi gradina conform functionalitatii</li>
-        <li class="prog" id="p3"> Amenajarea gradinii in functie de stilul preferat</li>
-        <li class="prog" id="p4">Secretele amenajarii unei curti sau gradini speciale </li>
+  <?php
+  $userID = 1;
+  //$userID = $_SESSION["userID"];
+  $quizID_count = mysqli_query($conn, "select count(*) from tutorials");
+  for ($i = 1; $i < 5; $i++){
+    $title = mysqli_query($conn, "select title from tutorials where quizID = $i");
+    $title = mysqli_fetch_array($title);
+    $title = $title["title"];
+    $rezultate = mysqli_query($conn, "select score from quizresults where quizID = $i and userID = $userID");
+    if (mysqli_num_rows($rezultate) == 0) {
+      echo "<li class = \"progressbar_begin\">".$title."</li>";
+    }
+    else{
+    $rezultate = mysqli_fetch_array($rezultate);
+    $rezultate = $rezultate["score"];
+    if ($rezultate > 0 && $rezultate < 3){
+      echo "<li class = \"progressbar_inprogress\">".$title."</li>";
+      }
+    elseif ($rezultate >= 3){
+      echo "<li class = \"progressbar_finished\">".$title."</li>";
+      }
+    }
+  }
+  
+  ?>
+
+<!-- 
+        <li class="progressbar_inprogress" id="p1">Care sunt etapele amenajarii unei gradini sau curti</li>
+        <li class="progressbar_finished" id="p2">Cum amenajezi gradina conform functionalitatii</li>
+        <li class="progressbar_begin" id="p3"> Amenajarea gradinii in functie de stilul preferat</li>
+        <li class="progressbar_begin" id="p4">Secretele amenajarii unei curti sau gradini speciale </li> -->
       </ul>
       <script src="../tutoriale.js"></script>
     </div>
