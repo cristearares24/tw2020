@@ -54,8 +54,26 @@ require 'dbconnection.php';
           {
               $quiz_id = $quiz_id['quizID'];
               $score = mysqli_query($conn, "select score from quizresults where userID =$userID and quizID = $quiz_id");
-              #if score < 3 brake
-              # else imi pun pasii si generez butonul pt quiz
+              $score = mysqli_fetch_array($score);
+              $score = $score["score"];
+              if ($score < 3) break;
+              else{
+                $pasi = mysqli_query($conn, "select title, content from steps where tutorialID =".$tutorialID);
+                while ($row = mysqli_fetch_array($pasi))
+                {
+                  echo "<div class=\"title\">";
+                  echo $row["title"];
+                  echo "</div>";
+                  echo "<div class=\"continut\">";
+                  echo $row["content"];
+                  echo "</div>";
+
+                
+                }
+                echo "</div>";
+                echo "</div>";
+                echo "<button class=\"buton\" id=\"quiz\"><a href=\"./quiz.php?quizID=$quizID\">Start quiz</a></button>";
+              }
           }
        }
        else
@@ -65,8 +83,24 @@ require 'dbconnection.php';
           {
             $quiz_id = $quiz_id['quizID'];
             $score = mysqli_query($conn, "select score from quizresults where userID =".$userID." and quizID = ".$quiz_id);
-            #if score < 3 brake
-            # else imi pun pasii si generez butonul pt quiz
+            $score = mysqli_fetch_array($score);
+            $score = $score["score"];
+              if ($score < 3) break;
+              else{
+                $pasi = mysqli_query($conn, "select title, content from steps where tutorialID =".$tutorialID);
+                while ($row = mysqli_fetch_array($pasi))
+                {
+                  echo "<div class=\"title\">";
+                  echo $row["title"];
+                  echo "</div>";
+                  echo "<div class=\"continut\">";
+                  echo $row["content"];
+                  echo "</div>";  
+                }
+                echo "</div>";
+                echo "</div>";
+                echo "<button class=\"buton\" id=\"quiz\"><a href=\"./quiz.php?quizID=$quizID\">Start quiz</a></button>";
+              }
           }
        }  
       ?>

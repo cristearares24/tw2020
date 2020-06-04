@@ -23,10 +23,14 @@ require 'dbconnection.php';
     <div class="quiz">
         <ol>
             <?php
+            $userID = 1;
             $quizID = $_GET["quizID"];
             $questions = mysqli_query($conn, "select questionID, questionString from questions where quizID =".$quizID);
             $contor = 1;
-            while ($row = mysqli_fetch_array($questions)){
+            $rez = mysqli_query($conn, "select * from quizresults where userID= $userID and quizID = $quizID");
+            if (mysqli_num_rows($rez) == 0)
+            {
+                while ($row = mysqli_fetch_array($questions)){
                 echo "<li>";
                 $rez = mysqli_query($conn, "select answerID, answerString from answers where questionID =".$row["questionID"]);
                 echo "<h3>".$row["questionString"]."</h3>";
@@ -39,12 +43,45 @@ require 'dbconnection.php';
                 }
                 echo "</li>";
                 $contor++;
+                
+                }
+            echo "</div>";
+            echo "<input type=\"hidden\" name=\"quizID\" value=$quizID>";
+            echo "<input type=\"submit\" class=\"buton\" value=\"Afiseaza\">";
+           
             }
+            else
+            {   
+              $score = mysqli_query($conn, "select score from quizresults where userID =$userID and quizID = $quizID");
+              $score = mysqli_fetch_array($score);
+              $score = $score["score"];
+              if($score < 3){
+                while ($row = mysqli_fetch_array($questions)){
+                    echo "<li>";
+                    $rez = mysqli_query($conn, "select answerID, answerString from answers where questionID =".$row["questionID"]);
+                    echo "<h3>".$row["questionString"]."</h3>";
+                    while($answer =  mysqli_fetch_array($rez)){
+                        echo "<div>";
+                        $trans = $row["questionID"].",".$answer["answerID"];
+                        echo "<input type=\"radio\" name = \"ans".$contor."\" value = \"".$trans."\""." required/>";
+                        echo "<label>".$answer["answerString"]."</label>";
+                        echo "</div>";
+                    }
+                    echo "</li>";
+                    $contor++;
+                    
+                    }
+                echo "</div>";
+                echo "<input type=\"hidden\" name=\"quizID\" value=$quizID>";
+                echo "<input type=\"submit\" class=\"buton\" value=\"Afiseaza\">";
+              }
+              elseif ($score >= 3)
+                echo "<p id=\"rasp\"> Ati facut deja acest tutorial. </p>";
+                echo "</div>";
+            }
+            echo "</ol>";
             ?>
-        </ol>
-    </div>
-    <input type="hidden" name="quizID" value=<?php echo $quizID ?> >
-    <input type="submit" class="buton" value="Afiseaza">
+    
     </form>
 </div>
 
@@ -52,4 +89,4 @@ require 'dbconnection.php';
 
 <?php
 require "footer.php";
-?>
+?> 

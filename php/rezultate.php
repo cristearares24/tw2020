@@ -46,7 +46,12 @@ require 'dbconnection.php';
             $quizID = $_POST["quizID"];
             $userID = 1;
             //$userID = $_SESSION["userID"];
-            $rezultate = mysqli_query($conn, "INSERT INTO quizresults(userID, quizID, score) VALUES ($userID, $quizID, $total_correct)");
+            $rez = mysqli_query($conn, "select * from quizresults where userID= $userID and quizID = $quizID");
+            if (mysqli_num_rows($rez) == 0)
+                $rezultate = mysqli_query($conn, "INSERT INTO quizresults(userID, quizID, score) VALUES ($userID, $quizID, $total_correct)");
+            else{
+                $rezultate = mysqli_query($conn, "update quizresults set score = $total_correct where quizID=$quizID and userID = $userID");
+            }
         ?>
 	
 	</div>
