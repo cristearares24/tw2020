@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2020 at 09:05 PM
+-- Generation Time: Jun 04, 2020 at 05:43 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `gartdb`
 --
-CREATE DATABASE IF NOT EXISTS `gartdb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `gartdb`;
 
 -- --------------------------------------------------------
 
@@ -40,9 +38,58 @@ CREATE TABLE `answers` (
 --
 
 INSERT INTO `answers` (`answerID`, `answerString`, `questionID`) VALUES
-(1, 'ok', 1),
-(2, 'ok1', 1),
-(4, 'da', 2);
+(1, 'arhitect peisagist', 1),
+(2, 'geolog', 1),
+(3, 'inginer cadastru', 1),
+(4, 'designer', 1),
+(5, 'un strat de balast', 2),
+(6, 'un ansamblu de tevi in pamant', 2),
+(7, 'o retea de santuri', 2),
+(8, 'un ansamblu de tevi pe sol', 2),
+(9, '2', 3),
+(10, '5-6', 3),
+(11, '3-5', 3),
+(12, '10-12', 3),
+(13, 'primavara si toamna', 4),
+(14, 'vara si primavara', 4),
+(15, 'toamna si vara', 4),
+(16, 'primavara', 4),
+(17, 'bine nivelat', 5),
+(18, 'bine drenat', 5),
+(19, 'bine fertilizat', 5),
+(20, 'in casa', 6),
+(21, 'la soare', 6),
+(22, 'la umbra', 6),
+(23, 'un cuptor cu lemne', 7),
+(24, 'un balansoar', 7),
+(25, 'o plita electrica', 7),
+(26, 'ciresul si marul', 8),
+(27, 'ciresul si nucul', 8),
+(28, 'nucul si prunul', 8),
+(29, 'lemnul', 9),
+(30, 'gresia', 9),
+(31, 'caramida', 9),
+(32, 'tufisuri cu lavanda', 10),
+(33, 'bonsai', 10),
+(34, 'tufisuri artificiale', 10),
+(35, 'un gard de lemn', 11),
+(36, 'un gard viu', 11),
+(37, 'un bat', 11),
+(38, 'negru si alb', 12),
+(39, 'rosu si albastru', 12),
+(40, 'alb si verde', 12),
+(41, 'pe orizontala', 13),
+(42, 'pe verticala', 13),
+(43, 'oblic', 13),
+(44, 'in trepte', 14),
+(45, 'agatate', 14),
+(46, 'nu se amplaseaza', 14),
+(47, 'nu se poate rezolva', 15),
+(48, 'adaugand apa', 15),
+(49, 'cu pamant fertil din alte zone', 15),
+(50, 'lemn', 16),
+(51, 'piatra de rau', 16),
+(52, 'caramida', 16);
 
 -- --------------------------------------------------------
 
@@ -62,9 +109,22 @@ CREATE TABLE `questions` (
 --
 
 INSERT INTO `questions` (`questionID`, `questionString`, `answerID`, `quizID`) VALUES
-(1, 'abcd', 1, 1),
-(2, 'nr2', 4, 1),
-(3, 'ok', 2, 2);
+(1, 'La cine poti apela cand vrei sa amenajezi gradina?', 1, 1),
+(2, 'Din ce este alcatuit un sistem de drenaj', 6, 1),
+(3, 'Cate kilograme de seminte sunt necesare la 100mp?', 11, 1),
+(4, 'Care sunt cele mai potrivite perioade pentru plant', 13, 1),
+(5, 'Cum trebuie sa fie terenul pe care construiesti gr', 18, 2),
+(6, 'Care este locul potrivit pentru amplasarea unui ia', 22, 2),
+(7, 'Ce poti construi pentru o bucatarie rustica?', 23, 2),
+(8, 'Care dintre urmatorii sunt pomi fructiferi pitici?', 26, 2),
+(9, 'Care este elementul central la gradinile rustice?', 29, 3),
+(10, 'Ce fel de tufisuri sunt in gradinile frantuzesti?', 32, 3),
+(11, 'Ce poti planta pentru a delimita spatiile cu flori', 36, 3),
+(12, 'Care sunt culorile predominante in gradinile moder', 40, 3),
+(13, 'Cum trebuie ridicata o curte de dimensiune mica?', 42, 4),
+(14, 'Cum trebuie aranjate florile intr-o curte in panta', 44, 4),
+(15, 'Cum se poate rezolva problema nisipului la mare?', 49, 4),
+(16, 'Cu ce pot fi inlocuite pavajele in zona de munte?', 51, 4);
 
 -- --------------------------------------------------------
 
@@ -104,35 +164,8 @@ CREATE TABLE `quizresults` (
 --
 
 INSERT INTO `quizresults` (`userID`, `quizID`, `score`) VALUES
-(1, 2, 0),
-(1, 1, 1),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 2),
-(1, 1, 1),
-(1, 1, 1);
+(1, 1, 4),
+(1, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -152,7 +185,7 @@ CREATE TABLE `steps` (
 --
 
 INSERT INTO `steps` (`stepID`, `title`, `content`, `tutorialID`) VALUES
-(1, 'Stabilirea necesarului de materiale si estimarea b', 'In functie de constructie (gratar, loc de joaca,\r\n        gradina cu legume), trebuie sa stabilesti cat te costa amenajarea gradinii si materialele necesare. Bugetul este\r\n        influentat de marimea terenului,\r\n        materialele de constructie, elementele de decor si plantele alese. Stabileste o lista cu tot ce ai nevoie,\r\n        astfel incat sa ai o idee cat mai exacta\r\n        despre costurile amenajarii. In plus, daca alegi sa apelezi la ajutorul unui arhitect peisagist, trebuie sa ii\r\n        comunici bugetul in care este\r\n        necesar sa se incadreze, inainte de inceperea proiectului de amenajare a gradinii.', 1),
+(1, 'Stabilirea necesarului de materiale', 'In functie de constructie (gratar, loc de joaca,\r\n        gradina cu legume), trebuie sa stabilesti cat te costa amenajarea gradinii si materialele necesare. Bugetul este\r\n        influentat de marimea terenului,\r\n        materialele de constructie, elementele de decor si plantele alese. Stabileste o lista cu tot ce ai nevoie,\r\n        astfel incat sa ai o idee cat mai exacta\r\n        despre costurile amenajarii. In plus, daca alegi sa apelezi la ajutorul unui arhitect peisagist, trebuie sa ii\r\n        comunici bugetul in care este\r\n        necesar sa se incadreze, inainte de inceperea proiectului de amenajare a gradinii.', 1),
 (2, 'Pregatirea solului pentru zonele verzi', 'Consta in: fertilizarea pamantului pentru plantarea gazonului cu turba, nivelarea pamantului, astfel incat sa se evite acumularea de apa in anumite zone ale gradinii, indepartarea buruienilor si erbicidarea solului.', 1),
 (3, ' Montarea unui sistem de drenaj', 'Sistemul de drenaj este format dintr-un ansamblu de tevi ingropate in pamant, care preiau surplusul de apa si il\r\n        evacueaza in bazinul de scurgere.\r\n        Apa preluata poate fi folosita apoi pentru sistemul de irigatii.', 1),
 (4, 'Montarea sistemului de irigatii', 'Acesta este format din programator, senzor de ploaie, electrovane, tevi,\r\n        hidrofor, aspersoare pop-up si este\r\n        util pentru udarea gazonului. Sistemul de irigatii poate fi programat la orele alese, iar senzorul de ploaie va\r\n        opri sistemul de irigatii atunci\r\n        cand ploua, tocmai pentru a evita consumul inutil de apa.', 1),
@@ -160,11 +193,11 @@ INSERT INTO `steps` (`stepID`, `title`, `content`, `tutorialID`) VALUES
 (6, 'Stabilirea cailor de acces', 'Acestea trebuie sa deserveasca nevoilor de deplasare si, totodata, sa fie in\r\n        armonie cu designul gradinii.\r\n        In functie de stilul ales, poti opta pentru carari de lemn, cu placi de marmura sau gresie ori doar cu pietris.', 1),
 (7, 'Plantarea florilor si a pomilor', 'Sapa cateva gropi in functie de numarul de flori sau de pomi alesi si adauga\r\n        in groapa putin pamant\r\n        fertil pentru a le ajuta sa se prinda mai usor. Uda cu apa din abundenta in primele saptamani, astfel incat sa\r\n        facilitezi procesul de inradacinare.\r\n        O varianta mai simpla este alegerea unor plante in ghivece, pe care trebuie doar sa amplasezi in diferite locuri\r\n        din gradina. Tine cont de faptul\r\n        ca cele mai potrivite perioade pentru plantare sunt primavara si toamna.', 1),
 (8, 'Montarea materialelor auxiliare', 'In functie de stilul ales pentru gradina ta, poti opta pentru montarea\r\n        diferitelor decoratiuni de gradina sau\r\n        piese de mobilier. Pentru o zona de relaxare alege un balansoar sau o bancuta, iar daca vrei sa organizezi\r\n        petreceri in aer liber, contruieste un\r\n        gratar. Adauga o masa si cateva scaune, un loc de joaca pentru copii, o fantana arteziana sau un iaz si nu uita\r\n        sa iei in calcul si sistemele de\r\n        iluminat. Pentru depozitarea uneltelor si a sculelor necesare pentru intretinerea ulterioara a gradinii poti\r\n        chiar sa amenajezi si un spatiu de\r\n        depozitare.', 1),
-(9, 'Gratarul, foisorul sau umbrarul de gradina', 'Construirea unui gratar in gradina este modalitatea ideala pentru a petrece un weekend alaturi de prieteni sau\r\n        de familie. Cand alegi locul unde vei construi gratarul, tine cont de faptul ca acesta trebuie sa fie cat mai\r\n        aproape de casa si de o sursa de apa, iar terenul pe care vei turna fundatia trebuie sa fie bine drenat, astfel\r\n        incat sa eviti acumularea de apa in jurul acestuia.\r\n        Stabileste apoi dimensiunea gratarului, toarna fundatia si ridica zidurile de s', 2),
+(9, 'Gratarul, foisorul sau umbrarul de gradina', 'Construirea unui gratar in gradina este modalitatea ideala pentru a petrece un weekend alaturi de prieteni sau\r\n        de familie. Cand alegi locul unde vei construi gratarul, tine cont de faptul ca acesta trebuie sa fie cat mai\r\n        aproape de casa si de o sursa de apa, iar terenul pe care vei turna fundatia trebuie sa fie bine drenat, astfel\r\n        incat sa eviti acumularea de apa in jurul acestuia.\r\n        Stabileste apoi dimensiunea gratarului, toarna fundatia si ridica zidurile.', 2),
 (10, 'Iazul sau helesteul din gradina\r\n', 'Amenajarea unui iaz in gradina nu este un proiect dificil si il poti realiza singur, cu putina indemanare.\r\n        Primul pas consta in alegerea locului potrivit pentru amplasarea lui. Ideal este un loc umbros, ferit de lumina\r\n        directa a soarelui.\r\n\r\n        Sapa groapa in functie de adancimea dorita si apoi toarna cimentul. Dupa ce se usuca cimentul, decoreaza iazul\r\n        cu cateva ghivece cu flori, plante, pietre si apoi umple helesteul cu apa.', 2),
 (11, 'Loc de joaca pentru copii', 'Ca sa amenajezi un loc de joaca pentru copii in gradina, nu ai nevoie de un spatiu foarte mare, ci doar de\r\n        putina creativitate si indemanare. Locul de joaca trebuie sa fie colorat si desprins din universul povestilor,\r\n        astfel incat sa ii starneasca interesul celui mic si sa il incurajeze sa petreaca mai mult timp in aer liber.\r\n\r\n        Poti construi singur o casa din lemn sau poti achizitiona una deja asamblata din comert, din lemn sau din\r\n        plastic. Alege o casuta amplasata la inaltime, astfel incat sa ii poti monta un tobogan si o scara, care sa ii\r\n        incurajeze pe cei mici sa faca miscare.\r\n\r\n        O alta idee este montarea unui leagan sau a unui balansoar, un mini-teren de baschet, o trambulina, o cutie cu\r\n        nisip sau un hamac in care cei mici se pot odihni dupa cateva ore de joaca. Pentru zilele calduroase de vara\r\n        alege o piscina gonflabila.\r\n\r\n        Atunci cand amenajezi locul de joaca in gradina, foloseste cat mai multe obiecte colorate. Poti chiar sa cauti\r\n        cateva obiecte cu personajele lor preferate din desene animate, astfel incat sa le starnesti si mai mult\r\n        interesul pentru locul de joaca.\r\n\r\n        Totodata, ai grija ca locul de joaca sa fie curat si ferit de pericole. Asigura-te ca obiectele folosite nu au\r\n        colturi ascutite, iar daca nu poti amenaja locul de joaca direct pe iarba, monteaza pe sol dale de cauciuc.', 2),
-(12, 'Bucatarie exterioara', 'Pentru amenajarea unei bucatarii de vara in gradina ai doua optiuni: o poti construi ca o prelungirea a casei\r\n        sau individual, in zona preferata din gradina. La fel ca in orice bucatarie, nu ar trebui sa iti lipseasca\r\n        spatiul de lucru, o chiuveta, un aragaz sau o plita electrica, cateva spatii de depozitare, o zona de luat masa\r\n        sau chiar si un frigider.\r\n\r\n        Daca vrei sa amenajezi o bucatarie rustica, poti opta pentru construirea unui cuptor cu lemne. Piatra\r\n        decorativa, completata cu elemente din lemn, este ideala pentru acest tip de bucatarie exterioara.\r\n\r\n        Totodata, tine cont de faptul ca bucataria exterioara trebuie racordata la toate utilitatile (apa, gaze si\r\n        curent electric). Daca nu ai experienta necesara, poti chema un specialist care sa efectueze toate aceste\r\n        lucrari. Mai multe idei despre cum poti sa amenajezi o bucatarie in aer liber gasesti aici.', 2),
-(13, 'Gradina cu legume sau arbori fructiferi', 'Amenajarea unei gradini cu legume si pomi fructiferi este practica si, in acelasi timp, iti confera avantajul ca\r\n        te vei bucura de alimente proaspete si sanatoase, plantate si ingrijite de tine. Daca iti organizezi gradina in\r\n        mod eficient, gradinaritul va fi o placere.\r\n\r\n        O idee practica este plantarea legumelor in padocuri de lemn, care nu necesita o investitie mare si sunt usor de\r\n        amenajat. In plus, iti va ramane suficient spatiu ca sa amenajezi si un loc pentru relaxare in gradina.\r\n\r\n        Pentru o mica livada in gradina, planteaza si cativa pomi fructiferi. Daca ai o gradina mica, poti opta pentru\r\n        pomi fructiferi pitici, din soiuri precum ciresul, marul, caisul sau parul. In plus, poti crea si o mini-gradina\r\n        cu plante aromatice, pe care le poti folosi la preparea diferitelor mancaruri, pentru un gust mai aromat. Uite\r\n        cateva sfaturi pentru utilizarea plantelor aromatice.', 2),
+(12, 'Bucatarie exterioara', 'Pentru amenajarea unei bucatarii de vara in gradina ai doua optiuni: o poti construi ca o prelungirea a casei\r\n        sau individual, in zona preferata din gradina. La fel ca in orice bucatarie, nu ar trebui sa iti lipseasca\r\n        spatiul de lucru, o chiuveta, un aragaz sau o plita electrica, cateva spatii de depozitare, o zona de luat masa\r\n        sau chiar si un frigider.\r\n\r\n        Daca vrei sa amenajezi o bucatarie rustica, poti opta pentru construirea unui cuptor cu lemne. Piatra\r\n        decorativa, completata cu elemente din lemn, este ideala pentru acest tip de bucatarie exterioara.\r\n\r\n        Totodata, tine cont de faptul ca bucataria exterioara trebuie racordata la toate utilitatile (apa, gaze si\r\n        curent electric). Daca nu ai experienta necesara, poti chema un specialist care sa efectueze toate aceste\r\n        lucrari.', 2),
+(13, 'Gradina cu legume sau arbori fructiferi', 'Amenajarea unei gradini cu legume si pomi fructiferi este practica si, in acelasi timp, iti confera avantajul ca\r\n        te vei bucura de alimente proaspete si sanatoase, plantate si ingrijite de tine. Daca iti organizezi gradina in\r\n        mod eficient, gradinaritul va fi o placere.\r\n\r\n        O idee practica este plantarea legumelor in padocuri de lemn, care nu necesita o investitie mare si sunt usor de\r\n        amenajat. In plus, iti va ramane suficient spatiu ca sa amenajezi si un loc pentru relaxare in gradina.\r\n\r\n        Pentru o mica livada in gradina, planteaza si cativa pomi fructiferi. Daca ai o gradina mica, poti opta pentru\r\n        pomi fructiferi pitici, din soiuri precum ciresul, marul, caisul sau parul. In plus, poti crea si o mini-gradina\r\n        cu plante aromatice, pe care le poti folosi la preparea diferitelor mancaruri, pentru un gust mai aromat.', 2),
 (14, 'Amenajarea gradinii in stil rustic', 'Gradinile rustice sunt pline de verdeata si de culoare, iar elementul central este reprezentat de lemn. Poti\r\n        folosi lemnul pentru decorarea potecii, pentru construirea unui foisor sau chiar a unui leagan. In plus, poti sa\r\n        folosesti cateva obiecte din lemn ca sa creezi un spatiu pentru luat masa. Scaunele sau taburetele din lemn, in\r\n        special cele lucrate manual, sunt ideale daca vrei sa creezi o gradina in stil rustic.', 3),
 (15, 'Amenajarea gradinii in stil frantuzesc', 'Simetria si ordinea sunt doua dintre trasaturile principale ale unei gradini in stil frantuzesc. Cararile din\r\n        pietre si tufisurile verzi cu forme geometrice nu ar trebui sa lipseasca din gradina ta. Adauga putina culoare\r\n        cu cateva plante in nuante vii, iar daca vrei o nota cat mai autentica, planteaza in curte tufisuri cu lavanda.\r\n        Te vor duce cu gandul la acele campii intinse pline cu lavanda din Provence.\r\n\r\n        O alta trasatura importanta este perfectiunea, asa ca trebuie sa ingrijesti in mod regulat pomii si plantele din\r\n        gradina. Pomii trebuie plantati in linie dreapta, iar florile trebuie sa fie organizate astfel incat sa formeze\r\n        modele geometrice. Nuantele care trebuie sa predomine sunt roz, alb, violet si albastru deschis. Poti chiar sa\r\n        amenajezi in iaz artificial sau o fantana arteziana, pentru un plus de rafinament al gradinii.', 3),
 (16, 'Amenajarea gradinii in stil englezesc\r\n', 'Cand vine vorba de amenajarea unei gradini in stil englezesc, nu ar trebui sa lipseasca tufele cu trandafiri\r\n        colorati, pe care ii poti planta si in locurile umbroase. In plus, gradinile englezesti rurale se disting prin\r\n        abundenta de flori si tufisuri care creeaza un decor insolit.\r\n\r\n        Pe de-o parte si de alta a potecii poti amenaja un gard viu scund, care sa delimiteze spatiile pline cu flori.\r\n        Gradina trebuie sa fie cat mai vie si colorata si sa pastreze o anumita ordine si un echilibru nestudiat.\r\n\r\n        Nu trebuie sa lipseasca nici piesele de decor, precum bancutele din fier forjat sau din lemn, vasele de\r\n        ceramica, iazurile ornamentale, casutele pentru pasari sau statuile.', 3),
@@ -275,13 +308,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `answerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `answerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `questionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `questionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `quiz`
