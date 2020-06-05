@@ -74,8 +74,27 @@ require "header.php";
     </div>
   </div>
 </body>
-<?php
 
-require "footer.php";
+<script>
+        var xmlhttp = new XMLHttpRequest(); 
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == XMLHttpRequest.DONE) { 
+                if (xmlhttp.status == 200) {
+                    sessionStorage.setItem("profileresults", xmlhttp.responseText);
+                    
+                    // xmlhttp.open("POST", "myProfile.php");
+                    // xmlhttp.setRequestHeader("Content-Type", "application/json");
+                    // xmlhttp.send(xmlhttp.responseText);
 
-?>
+                }
+                else if (xmlhttp.status == 400) {
+                    alert('There was an error 400');
+                }
+                else {
+                    alert('something else other than 200 was returned' + xmlhttp.responseText);
+                }
+            }
+        };
+        xmlhttp.open("GET", "http://localhost/gart/php/profileresults.php?userId=" + <?php echo $_SESSION["userId"]; ?>, true);
+        xmlhttp.send();
+    </script>

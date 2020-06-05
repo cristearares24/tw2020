@@ -48,23 +48,7 @@ require "header.php";
         <p><i class="fas fa-question-circle"></i> Quiz</p>
         <div class="skill-bar">
             <div class="progress-bar" style="width:30%"> 10% </div>
-        </div>
-        <p>All about trees </p>
-        <div class="skill-bar">
-            <div class="progress-bar" style="width:30%"> 30% </div>
-        </div>
-        <p><i class="fas fa-question-circle"></i> Quiz</p>
-        <div class="skill-bar">
-            <div class="progress-bar" style="width:40%"> 10% </div>
-        </div>
-        <p>My balcony</p>
-        <div class="skill-bar">
-            <div class="progress-bar" style="width:10%"> 10% </div>
-        </div>
-        <p><i class="fas fa-question-circle"></i> Quiz</p>
-        <div class="skill-bar">
-            <div class="progress-bar" style="width:10%"> 10% </div>
-        </div>
+        </div>      
         <div>
         <p style="text-align:center"><i><i class="fas fa-trophy"></i> Top 3 cei mai buni</i></p>
         <p style="text-align:center"><i>1.Nume/prenume; Scor obtinut</i> 100%</p>
@@ -79,12 +63,7 @@ require "header.php";
                 header("Location: ./index.php");
                 exit();
             }
-?>
+        ?>
     </div>
-
+    
 </body>
-<?php
-
-require "footer.php";
-
-?>

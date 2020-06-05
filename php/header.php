@@ -27,9 +27,12 @@ session_start();
         <a href="./tutoriale.php">
           <li>Tutoriale</li>
         </a>
-        <a href="./myProfile.php">
-          <li>Profilul meu</li>
-        </a>
+        <form action="./myProfile.php" style="display:inline" method="POST">
+          <input type="hidden" name="profileresults" id="inp" value=" "/>
+          <a href="javascript:;" onclick="myFunction(); parentNode.submit()">
+            <li>Profilul meu</li>
+          </a>
+        </form>
         <a href="./unelte.html">
           <li>Unelte</li>
         </a>
@@ -86,3 +89,13 @@ session_start();
 </div>
 
 </header>
+
+<script>
+  myFunction=function()
+  {
+    var x = document.getElementById("inp");
+    x.value = sessionStorage.getItem("profileresults");
+
+    //id.href += "?quizresults=" + sessionStorage.getItem("profileresults");
+  }
+</script>

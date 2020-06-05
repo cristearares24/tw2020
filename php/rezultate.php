@@ -10,9 +10,6 @@ require "header.php";
     <title>Chestionar</title>
 </head>
 
-<?php
-require 'dbconnection.php';
-?>
 
 <body>
  
@@ -21,9 +18,24 @@ require 'dbconnection.php';
 		<h1>Rezultat chestionar</h1>
 		
         <?php
+
+            if (!isset($_SESSION['userId']))
+            {
+            header("Location: ./index.php");
+            exit();
+            }
+
+            if (!isset($_REQUEST['quizID']))
+            {
+            header("Location: ./index.php");
+            exit();
+            }
+
+            require 'dbconnection.php';
             $questions = mysqli_query($conn, "select answerID from questions where quizID = 1");
             // echo $answer = $_POST["ans1"];
             $contor = 1;
+            $quizID = $_POST["quizID"];
             $total_correct = 0;
             while(true){
                 if (!isset($_POST["ans".$contor])){
@@ -43,14 +55,16 @@ require 'dbconnection.php';
             $contor--;
 
             echo "<p id = \"rasp\"> Ati raspuns corect la: $total_correct/$contor intrebari. </p>";
+            if($total_correct < 3){
+                echo "<button id = \"repeta\"><a href=\"./quiz.php?quizID=$quizID\">Repeta quiz</a></button>";
+            }
             $quizID = $_POST["quizID"];
-            $userID = 1;
-            //$userID = $_SESSION["userID"];
-            $rez = mysqli_query($conn, "select * from quizresults where userID= $userID and quizID = $quizID");
+            $id = $_SESSION["userId"];
+            $rez = mysqli_query($conn, "select * from quizresults where id= $id and quizID = $quizID");
             if (mysqli_num_rows($rez) == 0)
-                $rezultate = mysqli_query($conn, "INSERT INTO quizresults(userID, quizID, score) VALUES ($userID, $quizID, $total_correct)");
+                $rezultate = mysqli_query($conn, "INSERT INTO quizresults(id, quizID, score) VALUES ($id, $quizID, $total_correct)");
             else{
-                $rezultate = mysqli_query($conn, "update quizresults set score = $total_correct where quizID=$quizID and userID = $userID");
+                $rezultate = mysqli_query($conn, "update quizresults set score = $total_correct where quizID=$quizID and id = $id");
             }
         ?>
 	
@@ -58,6 +72,3 @@ require 'dbconnection.php';
  
 </body>
  
-<?php
-require "footer.php";
-?>
