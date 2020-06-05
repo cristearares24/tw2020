@@ -77,38 +77,80 @@ require "header.php";
                 $dif = mysqli_query($conn, "select difficulty from tutorials where quizID =".$quizID);
                 $dif = mysqli_fetch_array($dif);
                 $dif = $dif["difficulty"];
-                $score = mysqli_query($conn, "select score from quizresults where id =$id and quizID = $quizID");
-                $score = mysqli_fetch_array($score);
-                $score = $score == NULL ? 0 : $score["score"];
+                //SELECT distinct difficulty FROM quizresults q join tutorials t on t.quizID = q.quizID where t.difficulty = "Usor" and id =$id
+                // $score = mysqli_query($conn, "select score from quizresults where id=$id and quizID = $quizID");
+                // $score = mysqli_fetch_array($score);
+                // $score = $score == NULL ? 0 : $score["score"];
+            
                 if($dif == "Usor")
                 {
+                    $score = mysqli_query($conn, "select score from quizresults where id=$id and quizID = $quizID");
+                    $score = mysqli_fetch_array($score);
+                    $score = $score == NULL ? 0 : $score["score"];
                     if($score < 3)
                     {
                         showQuiz();
                     }
                     elseif ($score >= 3)
                         echo "<p id=\"rasp\"> Ati facut deja acest tutorial. </p>";
-
                 }
                 elseif ($dif == "Mediu")
                 {
+                    $score = mysqli_query($conn, "select score from quizresults where id=$id and quizID = $quizID");
+                    $score = mysqli_fetch_array($score);
+                    $score = $score == NULL ? 0 : $score["score"];
                     if($score < 3)
                     {
-                        showQuiz();
+                        //showQuiz();
+                        $score = mysqli_query($conn, "SELECT q.score FROM quizresults q join tutorials t on t.quizID = q.quizID where t.difficulty = \"Usor\" and q.id =$id");
+                        $canAccess = false;
+                        while($score = mysqli_fetch_array($score))
+                        {
+                            $score = $score["score"];
+                            if($score >= 3)
+                            {
+                                $canAccess = true;
+                                break;
+                            }
+                        }
+                        if($canAccess == true)
+                        {
+                            showQuiz();
+                        }
+                        else
+                            echo "<script>alert('Trebuie sa terminati quiz-ul de dificultate mai usoara intai.'); window.location = './tutoriale.php';</script>";
                     }
                     elseif ($score >= 3)
-                        echo "<p id=\"rasp\"> Ati facut deja acest tutorial. </p>";
+                        echo "<p id=\"rasp\"> Ati facut deja acest tutorial. </p>";        
                 }
                 else    
                 {
+                    $score = mysqli_query($conn, "select score from quizresults where id=$id and quizID = $quizID");
+                    $score = mysqli_fetch_array($score);
+                    $score = $score == NULL ? 0 : $score["score"];
                     if($score < 3)
                     {
-                        showQuiz();
+                        //showQuiz();
+                        $score = mysqli_query($conn, "SELECT q.score FROM quizresults q join tutorials t on t.quizID = q.quizID where t.difficulty = \"Mediu\" and q.id =$id");
+                        $canAccess = false;
+                        while($score = mysqli_fetch_array($score))
+                        {
+                            $score = $score["score"];
+                            if($score >= 3)
+                            {
+                                $canAccess = true;
+                                break;
+                            }
+                        }
+                        if($canAccess == true)
+                        {
+                            showQuiz();
+                        }
+                        else
+                            echo "<script>alert('Trebuie sa terminati quiz-ul de dificultate mai usoara intai.'); window.location = './tutoriale.php';</script>";
                     }
                     elseif ($score >= 3)
                         echo "<p id=\"rasp\"> Ati facut deja acest tutorial. </p>";
-
-                    //echo "<script>alert('Trebuie sa terminati quiz-ul de dificultate mai usoara intai.'); window.location = './tutoriale.php';</script>";             
                 }
                 // $score = mysqli_query($conn, "select score from quizresults where id =$id and quizID = $quizID");
                 // $score = mysqli_fetch_array($score);
