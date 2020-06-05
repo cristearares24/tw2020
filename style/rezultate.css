@@ -152,3 +152,12 @@ h1 {
   font-size: 30pt;
   text-align: center;
 }
+
+#repeta{
+  width: 95px;
+  height: 40px;
+  margin-left: 45%;
+  margin-right: 45%;
+  margin: 0 auto;
+  display: block;
+}
