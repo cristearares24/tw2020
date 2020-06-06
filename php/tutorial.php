@@ -50,7 +50,10 @@ require "header.php";
            
           }
           echo "</div>";
-          echo "<button class=\"buton\" id=\"quiz\"><a href=\"./quiz.php?quizID=$quizID\">Start quiz</a></button>";
+          echo "<form action=\"quiz.php\" method=\"get\">
+          <input type=\"hidden\" name=\"quizID\" value=$quizID>
+          <input class=\"buton\" type=\"submit\" value=\"Start quiz\">
+          </form>";
           echo "</div>";
        }
        elseif ($dif == "Mediu")
@@ -82,7 +85,10 @@ require "header.php";
 
                 }
                 echo "</div>";
-                echo "<button class=\"buton\" id=\"quiz\"><a href=\"./quiz.php?quizID=$quizID\">Start quiz</a></button>";
+                echo "<form action=\"quiz.php\" method=\"get\">
+                <input type=\"hidden\" name=\"quizID\" value=$quizID>
+                <input class=\"buton\" type=\"submit\" value=\"Start quiz\">
+                </form>";
                 echo "</div>";
               }
           }
@@ -120,7 +126,12 @@ require "header.php";
                   echo "</div>";  
               }
             echo "</div>";
-            echo "<button class=\"buton\" id=\"quiz\"><a href=\"./quiz.php?quizID=$quizID\">Start quiz</a></button>";
+            echo "<form action=\"quiz.php\" method=\"get\">
+            <input type=\"hidden\" name=\"quizID\" value=$quizID>
+            <input class=\"buton\" type=\"submit\" value=\"Start quiz\">
+            </form>";
+
+            // echo "<button class=\"buton\" id=\"quiz\"><a href=\"./quiz.php?quizID=$quizID\">Start quiz</a></button>";
             echo "</div>";
           }
        }  

@@ -58,7 +58,15 @@ require "header.php";
 
             echo "<p id = \"rasp\"> Ati raspuns corect la: $total_correct/$contor intrebari. </p>";
             if($total_correct < 3){
-                echo "<button id = \"repeta\"><a href=\"./quiz.php?quizID=$quizID\">Repeta quiz</a></button>";
+                echo "<form action=\"quiz.php\" method=\"get\">
+                <input type=\"hidden\" name=\"quizID\" value=$quizID>
+                <input id=\"repeta\" type=\"submit\" value=\"Repeta quiz\">
+                </form>";
+            }
+            else {
+                echo "<form action=\"tutoriale.php\">
+                <input id=\"repeta\" type=\"submit\" value=\"Mergi la tutoriale\">
+                </form>";
             }
             $quizID = $_POST["quizID"];
             $id = $_SESSION["userId"];
