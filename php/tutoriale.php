@@ -21,10 +21,11 @@ require "header.php";
   <?php
 
   if (!isset($_SESSION['userId']))
-    {
-      header("Location: ./index.php");
-      exit();
-    }
+  {
+    echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";
+    //header("Location: ./index.php");
+    exit();
+  }
 
   require 'dbconnection.php';
   $id = $_SESSION['userId'];
