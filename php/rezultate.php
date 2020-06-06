@@ -27,7 +27,8 @@ require "header.php";
 
             if (!isset($_REQUEST['quizID']))
             {
-            header("Location: ./index.php");
+            echo "<script>alert('Trebuie sa terminati quiz-ul intai.'); window.location = './tutoriale.php';</script>";             
+            //header("Location: ./index.php");
             exit();
             }
 

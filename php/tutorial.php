@@ -55,10 +55,10 @@ require "header.php";
        elseif ($dif == "Mediu")
        {
           $quizz = mysqli_query($conn, "select quizID from tutorials where difficulty =\"Usor\"");
-          while ($quiz_id = mysqli_fetch_array($quizz))
+          while ($quiz_ID = mysqli_fetch_array($quizz))
           {
-              $quiz_id = $quiz_id['quizID'];
-              $score = mysqli_query($conn, "select score from quizresults where id =$id and quizID = $quiz_id");
+              $quiz_ID = $quiz_ID['quizID'];
+              $score = mysqli_query($conn, "select score from quizresults where id =$id and quizID = $quiz_ID");
               if (mysqli_num_rows($score) != 0)
                 {
                   $score = mysqli_fetch_array($score);
@@ -79,7 +79,6 @@ require "header.php";
                   echo $row["content"];
                   echo "</div>";
 
-                
                 }
                 echo "</div>";
                 echo "<button class=\"buton\" id=\"quiz\"><a href=\"./quiz.php?quizID=$quizID\">Start quiz</a></button>";
@@ -89,34 +88,39 @@ require "header.php";
        }
        else
        {
-          $quizz = mysqli_query($conn, "select quizID from tutorials where difficulty =\"Mediu\"");
-          while ($quiz_id = mysqli_fetch_array($quizz))
+          $quizzz = mysqli_query($conn, "select quizID from tutorials where difficulty =\"Mediu\"");
+          $hasCompleted = true;
+          while ($quiz_IDD = mysqli_fetch_array($quizzz))
           {
-            $quiz_id = $quiz_id['quizID'];
-            $score = mysqli_query($conn, "select score from quizresults where id =".$id." and quizID = ".$quiz_id);
-            if (mysqli_num_rows($score) != 0)
+              $quiz_IDD = $quiz_IDD['quizID'];
+              $score = mysqli_query($conn, "select score from quizresults where id = $id and quizID = $quiz_IDD");
+              if (mysqli_num_rows($score) != 0)
                 {
                   $score = mysqli_fetch_array($score);
                   $score = $score["score"];
                 }
-            else $score = 0;
-              if ($score < 3) 
-              echo "<script>alert('Trebuie sa terminati quiz-ul de dificultate mai usoara intai.'); window.location = './tutoriale.php';</script>";             
-              else{
-                $pasi = mysqli_query($conn, "select title, content from steps where tutorialID =".$tutorialID);
-                while ($row = mysqli_fetch_array($pasi))
-                {
+              else 
+                $score = 0;
+              if ($score < 3) {
+                $hasCompleted = false;
+                echo "<script>alert('Trebuie sa terminati quiz-ul de dificultate mai usoara intai.'); window.location = './tutoriale.php';</script>";             
+              }
+          }
+
+          if ($hasCompleted) {
+              $pasi = mysqli_query($conn, "select title, content from steps where tutorialID =".$tutorialID);
+              while ($row = mysqli_fetch_array($pasi))
+              {
                   echo "<div class=\"title\">";
                   echo $row["title"];
                   echo "</div>";
                   echo "<div class=\"continut\">";
                   echo $row["content"];
                   echo "</div>";  
-                }
-                echo "</div>";
-                echo "<button class=\"buton\" id=\"quiz\"><a href=\"./quiz.php?quizID=$quizID\">Start quiz</a></button>";
-                echo "</div>";
               }
+            echo "</div>";
+            echo "<button class=\"buton\" id=\"quiz\"><a href=\"./quiz.php?quizID=$quizID\">Start quiz</a></button>";
+            echo "</div>";
           }
        }  
       ?>

@@ -28,11 +28,18 @@ require "header.php";
 
   require 'dbconnection.php';
   $id = $_SESSION['userId'];
-  $quizID_count = mysqli_query($conn, "select count(*) from tutorials");
-  for ($i = 1; $i < 5; $i++){
+  $quizID_count = mysqli_query($conn, "select COUNT(*) as 'count' from tutorials");
+  $quizID_count = mysqli_fetch_array($quizID_count);
+  $quizID_count = $quizID_count["count"];
+  for ($i = 1; $i <= $quizID_count; $i++)
+  {
     $title = mysqli_query($conn, "select title from tutorials where quizID = $i");
     $title = mysqli_fetch_array($title);
     $title = $title["title"];
+    $tutorial = mysqli_query($conn, "select tutorialID from tutorials where tutorialID = $i");
+    $tutorial = mysqli_fetch_array($tutorial);
+    $tutorial = $tutorial["tutorialID"];
+    if($tutorial == 0) {$count = $count + 1; continue;}
     $rezultate = mysqli_query($conn, "select score from quizresults where quizID = $i and id = $id");
     if (mysqli_num_rows($rezultate) == 0) {
       echo "<li class = \"progressbar_begin\">".$title."</li>";
@@ -50,12 +57,16 @@ require "header.php";
   }
   echo "</ul> </div>";
   echo "<div class=\"grid-container\">";
-  $id = $_SESSION['userId'];
-  $quizID_count = mysqli_query($conn, "select count(*) from tutorials");
-  for ($i = 1; $i < 5; $i++)
+  //$id = $_SESSION['userId'];
+  // $quizID_count = mysqli_query($conn, "select count(*) from tutorials");
+  for ($i = 1; $i <= $quizID_count; $i++)
   {
     echo "<div class=\"tutorial\"> <div class=\"Nume\"> <p>$title</p> </div>";
     echo "<div class=\"continutstyle\"> <ul>";
+    $tutorial = mysqli_query($conn, "select tutorialID from tutorials where tutorialID = $i");
+    $tutorial = mysqli_fetch_array($tutorial);
+    $tutorial = $tutorial["tutorialID"];
+    if($tutorial == 0) {$count = $count + 1; continue;}
     $title = mysqli_query($conn, "select title from tutorials where quizID = $i");
     $title = mysqli_fetch_array($title);
     $title = $title["title"];

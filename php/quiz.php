@@ -121,7 +121,7 @@ require "header.php";
                             echo "<script>alert('Trebuie sa terminati quiz-ul de dificultate mai usoara intai.'); window.location = './tutoriale.php';</script>";
                     }
                     elseif ($score >= 3)
-                        echo "<p id=\"rasp\"> Ati facut deja acest tutorial. </p>";        
+                        echo "<p id=\"rasp\"> Ati facut deja acest tutorial.PAPAPAP </p>";        
                 }
                 else    
                 {
