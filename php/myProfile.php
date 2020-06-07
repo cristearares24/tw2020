@@ -27,7 +27,7 @@ require "header.php";
 
         if (!isset($_SESSION['userId']))
         {
-            echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";             
+            //echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";             
             // header("Location: ./index.php");
             exit();
         }
@@ -51,8 +51,8 @@ require "header.php";
         foreach ($rez as $tutorial) {
             $title = $tutorial["title"];
             $score = $tutorial["score"];
-            $progress = ($score / 4) * 100 - 5;
-            $progress1 = $progress + 5; 
+            $progress = ($score / 4) * 100 ;
+            $progress1 = $progress; 
             echo "<p style=\"margin-left:1%\">$title</p>";
             echo "<div class=\"skill-bar\">";
             echo "<div class=\"progress-bar\" style=\"width:$progress%\">$progress1%</div>";
