@@ -11,7 +11,11 @@ require "header.php";
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <title>Unelte</title>
 </head>
+<script>function refreshPage()
+{
+  window.location.reload(true); 
 
+}</script>
 
 <body>
 
@@ -34,13 +38,38 @@ require "header.php";
       $sql = "DELETE FROM unelte WHERE id=$id";
       mysqli_query($conn, $sql);
   }
+  function addItem()
+  {
+    require 'dbconnection.php';
+    $name = $_POST["name"];
+    $descriere = $_POST["description"];
+    $imageUrl = $_POST["image-url"];
+    if (!empty($_POST['name'])) {
+    $sql = "INSERT INTO `unelte` (`id`, `name`, `description`, `image`) VALUES (NULL, '$name', '$descriere', '$imageUrl');";
+    mysqli_query($conn, $sql);
+   }
+  }
 
     $result = mysqli_query($conn, "SELECT COUNT(*) AS `count` FROM `unelte`");
     $row = mysqli_fetch_array($result);
     $count = $row['count'];
-  
-    for ($i = 1; $i <= $count; $i++)
   {
+    echo "<div class=\"grid-item\"> <div class=\"product-img\"><img src='https://i.pinimg.com/originals/10/b2/f6/10b2f6d95195994fca386842dae53bb2.png' height='420' width='327'></div>";
+    echo "<div class=\"product-info\"> <div class=\"product-text\">";
+    echo "<br><br><br><br>";
+    echo '<form action = "unelteAdmin.php" method="post">
+    Nume: <input type="text" name="name"><br>
+    Descriere: <input type="text" name="description"><br>
+    Image-url: <input type="text" name="image-url"><br>
+    <input type="submit">
+    </form>';
+    echo "</div> </div>";
+    echo "</div>";
+
+  }
+
+  for ($i = 1; $i <= $count; $i++)
+  {   
     $id = mysqli_query($conn, "select id from unelte where id=".$i);
     $id = mysqli_fetch_array($id);
     $id = $id["id"];
@@ -59,16 +88,18 @@ require "header.php";
     echo "<h1>$title</h1>";
     echo "<br>";
     echo "<p>$descriere</p>";
-    echo "<form method='get'> <button name='delete' value='$id' ><img src='https://image.flaticon.com/icons/png/512/61/61848.png' height='35' width='30'></button>";
+    echo "<form action = 'unelteAdmin.php' method='post'> <button name='delete' value='$id' ><img src='https://image.flaticon.com/icons/png/512/61/61848.png' height='35' width='30'></button>";
     echo "</div> </div>";
     echo "</div>";
   }
-  echo "</div> </div>";
 
-  if(isset($_GET['delete'])){
-    deleteItem($_GET['delete']);
-    
+  if(isset($_POST['delete'])){
+    deleteItem($_POST['delete']);
   }
+  if(isset($_POST['name'])){
+    addItem();
+  }
+
   ?>  
 
 </form>

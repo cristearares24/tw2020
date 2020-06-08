@@ -32,6 +32,10 @@ require "header.php";
 
   for ($i = 1; $i <= $count; $i++)
   {
+    $id = mysqli_query($conn, "select id from unelte where id=".$i);
+    $id = mysqli_fetch_array($id);
+    $id = $id["id"];
+    if ($id == 0) {$count = $count + 1; continue;}
     $image = mysqli_query($conn, "select image from unelte where id=".$i);
     $image = mysqli_fetch_array($image);
     $image = $image["image"];
