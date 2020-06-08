@@ -26,13 +26,13 @@ session_start();
                     <i class="fas fa-bars"></i>
                 </label>
                 <ul>
-                    <li><a href="./index.php">Acasă</a></li>
+                    <li><a class="active" href="./index.php">Acasă</a></li>
                     <li><a href="./tutoriale.php">Tutoriale</a></li>
                     <form action="./myProfile.php" style="display:inline" method="POST">
                         <input type="hidden" name="profileresults" id="inp" value=" " />
-                        <li><a href="javascript:;" onclick="myFunction(); parentNode.parentNode.submit()">Profilul meu</a></li>
-                    </form>
-                        <li><a href="../unelte.html">Unelte</a></li>               
+                        <li> <a href="javascript:;" onclick="myFunction(); parentNode.parentNode.submit()">
+                        Profilul meu</a></li></form>
+                        <li><a href="./unelte.php">Unelte</a></li>
                         <?php
                         if (isset($_SESSION['userId']))
                         {
@@ -57,4 +57,8 @@ session_start();
   
       //id.href += "?quizresults=" + sessionStorage.getItem("profileresults");
     }
+<<<<<<< HEAD
   </script>
+=======
+</script>
+>>>>>>> 078e71988cdbd04561d40db9db26d1bd2264b2ea

@@ -11,6 +11,9 @@ require "header.php";
   <div class="content">
     <div id="listing">
       <?php
+        if(isset($_POST['delete'])){
+            deleteItem($_POST['delete']);
+          }
 
         if (!isset($_SESSION['userId']))
         {
@@ -19,6 +22,13 @@ require "header.php";
           exit();
         }
     
+    function deleteItem($id)
+    {
+      require 'dbconnection.php';
+      $sql = "DELETE FROM steps WHERE stepID=$id";
+      mysqli_query($conn, $sql);
+
+    }
        require 'dbconnection.php';
 
        $id = $_SESSION["userId"];
@@ -30,16 +40,17 @@ require "header.php";
        if ($dif == "Usor")
        {
           
-          $pasi = mysqli_query($conn, "select title, content from steps where tutorialID =".$tutorialID);
+          $pasi = mysqli_query($conn, "select title, content, stepID from steps where tutorialID =".$tutorialID);
           while ($row = mysqli_fetch_array($pasi))
           {
+            $idStep = $row["stepID"];
             echo "<div class=\"title\">";
             echo $row["title"];
+            echo "<form method='post'> <button name='delete' value='$idStep' ><img src='https://image.flaticon.com/icons/png/512/61/61848.png' height='35' width='30'></button>";
             echo "</div>";
             echo "<div class=\"continut\">";
             echo $row["content"];
             echo "</div>";
-
            
           }
           echo "</div>";
