@@ -11,8 +11,8 @@ require "header.php";
   <div class="content">
     <div id="listing">
       <?php
-        if(isset($_GET['delete'])){
-            deleteItem($_GET['delete']);
+        if(isset($_POST['delete'])){
+            deleteItem($_POST['delete']);
           }
 
         if (!isset($_SESSION['userId']))
@@ -27,6 +27,7 @@ require "header.php";
       require 'dbconnection.php';
       $sql = "DELETE FROM steps WHERE stepID=$id";
       mysqli_query($conn, $sql);
+
     }
        require 'dbconnection.php';
 
@@ -45,12 +46,11 @@ require "header.php";
             $idStep = $row["stepID"];
             echo "<div class=\"title\">";
             echo $row["title"];
-            echo "<form method='get'> <button name='delete' value='$idStep' ><img src='https://image.flaticon.com/icons/png/512/61/61848.png' height='35' width='30'></button>";
+            echo "<form method='post'> <button name='delete' value='$idStep' ><img src='https://image.flaticon.com/icons/png/512/61/61848.png' height='35' width='30'></button>";
             echo "</div>";
             echo "<div class=\"continut\">";
             echo $row["content"];
             echo "</div>";
-
            
           }
           echo "</div>";
