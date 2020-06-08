@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gazdă: 127.0.0.1
--- Timp de generare: iun. 08, 2020 la 12:38 PM
+-- Timp de generare: iun. 08, 2020 la 01:49 PM
 -- Versiune server: 10.4.11-MariaDB
 -- Versiune PHP: 7.2.31
 
@@ -154,7 +154,7 @@ INSERT INTO `quiz` (`quizID`, `tutorialID`) VALUES
 --
 
 CREATE TABLE `quizresults` (
-  `userID` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `quizID` int(11) NOT NULL,
   `score` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -163,7 +163,7 @@ CREATE TABLE `quizresults` (
 -- Eliminarea datelor din tabel `quizresults`
 --
 
-INSERT INTO `quizresults` (`userID`, `quizID`, `score`) VALUES
+INSERT INTO `quizresults` (`id`, `quizID`, `score`) VALUES
 (1, 1, 4),
 (1, 2, 4);
 
@@ -185,7 +185,7 @@ CREATE TABLE `steps` (
 --
 
 INSERT INTO `steps` (`stepID`, `title`, `content`, `tutorialID`) VALUES
-(1, 'Stabilirea necesarului de materiale', 'In functie de constructie (gratar, loc de joaca,\r\n        gradina cu legume), trebuie sa stabilesti cat te costa amenajarea gradinii si materialele necesare. Bugetul este\r\n        influentat de marimea terenului,\r\n        materialele de constructie, elementele de decor si plantele alese. Stabileste o lista cu tot ce ai nevoie,\r\n        astfel incat sa ai o idee cat mai exacta\r\n        despre costurile amenajarii. In plus, daca alegi sa apelezi la ajutorul unui arhitect peisagist, trebuie sa ii\r\n        comunici bugetul in care este\r\n        necesar sa se incadreze, inainte de inceperea proiectului de amenajare a gradinii.', 1),
+(1, '1', '1', 1),
 (2, 'Pregatirea solului pentru zonele verzi', 'Consta in: fertilizarea pamantului pentru plantarea gazonului cu turba, nivelarea pamantului, astfel incat sa se evite acumularea de apa in anumite zone ale gradinii, indepartarea buruienilor si erbicidarea solului.', 1),
 (3, ' Montarea unui sistem de drenaj', 'Sistemul de drenaj este format dintr-un ansamblu de tevi ingropate in pamant, care preiau surplusul de apa si il\r\n        evacueaza in bazinul de scurgere.\r\n        Apa preluata poate fi folosita apoi pentru sistemul de irigatii.', 1),
 (4, 'Montarea sistemului de irigatii', 'Acesta este format din programator, senzor de ploaie, electrovane, tevi,\r\n        hidrofor, aspersoare pop-up si este\r\n        util pentru udarea gazonului. Sistemul de irigatii poate fi programat la orele alese, iar senzorul de ploaie va\r\n        opri sistemul de irigatii atunci\r\n        cand ploua, tocmai pentru a evita consumul inutil de apa.', 1),
@@ -363,7 +363,7 @@ ALTER TABLE `steps`
 -- AUTO_INCREMENT pentru tabele `tutorials`
 --
 ALTER TABLE `tutorials`
-  MODIFY `tutorialID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `tutorialID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pentru tabele `unelte`
