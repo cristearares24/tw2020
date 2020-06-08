@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 06, 2020 at 12:28 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- Gazdă: 127.0.0.1
+-- Timp de generare: iun. 08, 2020 la 12:38 PM
+-- Versiune server: 10.4.11-MariaDB
+-- Versiune PHP: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gartdb`
+-- Bază de date: `gartdb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `answers`
+-- Structură tabel pentru tabel `answers`
 --
 
 CREATE TABLE `answers` (
@@ -34,7 +34,7 @@ CREATE TABLE `answers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `answers`
+-- Eliminarea datelor din tabel `answers`
 --
 
 INSERT INTO `answers` (`answerID`, `answerString`, `questionID`) VALUES
@@ -94,42 +94,42 @@ INSERT INTO `answers` (`answerID`, `answerString`, `questionID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `questions`
+-- Structură tabel pentru tabel `questions`
 --
 
 CREATE TABLE `questions` (
   `questionID` int(11) NOT NULL,
-  `questionString` varchar(100) NOT NULL,
+  `questionString` varchar(50) NOT NULL,
   `answerID` int(11) NOT NULL,
   `quizID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `questions`
+-- Eliminarea datelor din tabel `questions`
 --
 
 INSERT INTO `questions` (`questionID`, `questionString`, `answerID`, `quizID`) VALUES
 (1, 'La cine poti apela cand vrei sa amenajezi gradina?', 1, 1),
-(2, 'Din ce este alcatuit un sistem de drenaj?', 6, 1),
+(2, 'Din ce este alcatuit un sistem de drenaj', 6, 1),
 (3, 'Cate kilograme de seminte sunt necesare la 100mp?', 11, 1),
-(4, 'Care sunt cele mai potrivite perioade pentru plantatie?', 13, 1),
-(5, 'Cum trebuie sa fie terenul pe care construiesti gradina?', 18, 2),
-(6, 'Care este locul potrivit pentru amplasarea unui iaz?', 22, 2),
+(4, 'Care sunt cele mai potrivite perioade pentru plant', 13, 1),
+(5, 'Cum trebuie sa fie terenul pe care construiesti gr', 18, 2),
+(6, 'Care este locul potrivit pentru amplasarea unui ia', 22, 2),
 (7, 'Ce poti construi pentru o bucatarie rustica?', 23, 2),
 (8, 'Care dintre urmatorii sunt pomi fructiferi pitici?', 26, 2),
 (9, 'Care este elementul central la gradinile rustice?', 29, 3),
 (10, 'Ce fel de tufisuri sunt in gradinile frantuzesti?', 32, 3),
-(11, 'Ce poti planta pentru a delimita spatiile cu flori?', 36, 3),
-(12, 'Care sunt culorile predominante in gradinile moderne?', 40, 3),
+(11, 'Ce poti planta pentru a delimita spatiile cu flori', 36, 3),
+(12, 'Care sunt culorile predominante in gradinile moder', 40, 3),
 (13, 'Cum trebuie ridicata o curte de dimensiune mica?', 42, 4),
-(14, 'Cum trebuie aranjate florile intr-o curte in panta?', 44, 4),
+(14, 'Cum trebuie aranjate florile intr-o curte in panta', 44, 4),
 (15, 'Cum se poate rezolva problema nisipului la mare?', 49, 4),
 (16, 'Cu ce pot fi inlocuite pavajele in zona de munte?', 51, 4);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quiz`
+-- Structură tabel pentru tabel `quiz`
 --
 
 CREATE TABLE `quiz` (
@@ -138,7 +138,7 @@ CREATE TABLE `quiz` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `quiz`
+-- Eliminarea datelor din tabel `quiz`
 --
 
 INSERT INTO `quiz` (`quizID`, `tutorialID`) VALUES
@@ -150,26 +150,27 @@ INSERT INTO `quiz` (`quizID`, `tutorialID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quizresults`
+-- Structură tabel pentru tabel `quizresults`
 --
 
 CREATE TABLE `quizresults` (
-  `id` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
   `quizID` int(11) NOT NULL,
   `score` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `quizresults`
+-- Eliminarea datelor din tabel `quizresults`
 --
 
-INSERT INTO `quizresults` (`id`, `quizID`, `score`) VALUES
-(2, 1, 4);
+INSERT INTO `quizresults` (`userID`, `quizID`, `score`) VALUES
+(1, 1, 4),
+(1, 2, 4);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `steps`
+-- Structură tabel pentru tabel `steps`
 --
 
 CREATE TABLE `steps` (
@@ -180,7 +181,7 @@ CREATE TABLE `steps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `steps`
+-- Eliminarea datelor din tabel `steps`
 --
 
 INSERT INTO `steps` (`stepID`, `title`, `content`, `tutorialID`) VALUES
@@ -212,7 +213,7 @@ INSERT INTO `steps` (`stepID`, `title`, `content`, `tutorialID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tutorials`
+-- Structură tabel pentru tabel `tutorials`
 --
 
 CREATE TABLE `tutorials` (
@@ -224,19 +225,43 @@ CREATE TABLE `tutorials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tutorials`
+-- Eliminarea datelor din tabel `tutorials`
 --
 
 INSERT INTO `tutorials` (`tutorialID`, `title`, `description`, `difficulty`, `quizID`) VALUES
 (1, 'Care sunt etapele amenajarii unei gradini sau curti', 'Cand vrei sa va apucati de amenajarea unei gradini este similar proiectarii si construirii unei case: totul porneste de la etapa de planificare, urmand apoi ridicarea elementelor de infrastructura, precum alei, foisoare, aranjamente florale gradini, sisteme de iluminat, trasee de apa si alte facilitati obligatorii intr-o gradina, finalizandu-se cu mici finisaje.\r\n', 'Usor', 1),
 (2, 'Secretele amenajarii unei curti sau gradini speciale', 'Exista situatii in care curtea impune limitari pentru aranjarea unei gradini care trebuie concepute atat functional, cat si estetic. In continuare, va spunem din secretele amenajarii unei curti sau gradini speciale, fie ca vorbim despre spatiu restrans, de teren in panta sau nisipos, fie doar despre gradini care necesita minim efort in intretinere, pentru oameni ocupati.', 'Mediu', 2),
-(3, 'Amenajarea gradinii in functie de stilul preferat\r\n\r\n', 'Spatiul exterior al casei tale poate fi amenajat asa cum iti doresti, indiferent de marimea acestuia. Aici regasesti cateva idei de gradini amenajate in diferite stiluri, din care poti sa iti alegi proiectul preferat!', 'Mediu', 3),
+(3, 'Amenajarea gradinii in functie de stilul preferat\r\n\r\n', 'Spatiul exterior al casei tale poate fi amenajat asa cum iti doresti, indiferent de marimea acestuia. Aici regasesti cateva idei de gradini amenajate in diferite stiluri, din care poti sa iti alegi proiectul preferat!', 'Dificil', 3),
 (4, 'Cum amenajezi gradina conform functionalitatii\r\n\r\n', 'Amenajarea gradinii incepe cu stabilirea modului in care vrei sa folosesti ulterior spatiul respectiv, ca loc pentru relaxare sau ca loc unde sa plantezi si sa cresti legume proaspete si delicioase.', 'Dificil', 4);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structură tabel pentru tabel `unelte`
+--
+
+CREATE TABLE `unelte` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `image` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Eliminarea datelor din tabel `unelte`
+--
+
+INSERT INTO `unelte` (`id`, `name`, `description`, `image`) VALUES
+(1, 'Grebla', 'Grebla este o unealtă folosită în horticultură pentru a strânge frunze, fân, iarbă sau în grădinărit pentru a afâna sau a nivela pământul.', '\'https://s12emagst.akamaized.net/products/617/616987/images/res_9c0a34020d1cc67054bf22762215d8d2_full.jpg\''),
+(2, 'Lopata', 'Lopata este o unealtă constituită dintr-o bucată de tablă metalică sau o placă de lemn sau de plastic, ușor concavă, cu marginile laterale puțin răsfrânte, montată pe o coadă de lemn, folosită la ridicarea și aruncarea unui material.', '\'https://s12emagst.akamaized.net/products/8251/8250082/images/res_4e2877875235013b204c5d9f6f9b8862_full.jpg\''),
+(3, 'Furtun extensibil', 'Furtunul extensibil este ideal în cazul în care cauți unul ușor de purtat și care să nu ocupe mult spațiu, să fie ușor de rulat și derulat. Asta pentru că are proprietatea specială de a se alungi automat. În momentul în care este conectat la robinet și umplut cu apă, acesta își poate depăși de trei ori lungimea inițială, iar pentru a reveni la forma inițială este suficient să îl golești de apă.', '\'https://s12emagst.akamaized.net/products/20917/20916095/images/res_6114ba43c77b17619b7f09d896eb1a21_full.jpg\''),
+(4, 'Drujba', 'Fierastrau electric cu lant, usor de folosit si puternic pentru utilizare indelungata si fara efort. Intindere rapida a lantului, fara scule suplimentare.', '\'https://s12emagst.akamaized.net/products/17097/17096764/images/res_2b03eb6278404ecfbbfb5eaf81d0ca41_450x450_it8j.jpg\''),
+(5, '5', '5', '5');
+
+-- --------------------------------------------------------
+
+--
+-- Structură tabel pentru tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -248,25 +273,26 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Eliminarea datelor din tabel `users`
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `pwd`) VALUES
-(2, 'Alina', 'Popa', 'alinapopa0610@gmail.com', '$2y$10$h6zcFGljoKFqouPMP.WjVev/s2IyBSiru/ed9MDyGzskgC3ldpcny');
+(1, 'Alina', 'Popa', 'alinapopa0610@gmail.com', 'bineaivenit'),
+(2, 'Cristea', 'Rares', 'cristearares24@yahoo.ro', '$2y$10$w07Aa2VDWmXHcs9e2tcoceZYvv/5waeuYtkVABxFCklramHqsZLY2');
 
 --
--- Indexes for dumped tables
+-- Indexuri pentru tabele eliminate
 --
 
 --
--- Indexes for table `answers`
+-- Indexuri pentru tabele `answers`
 --
 ALTER TABLE `answers`
   ADD PRIMARY KEY (`answerID`),
   ADD KEY `FK_question` (`questionID`);
 
 --
--- Indexes for table `questions`
+-- Indexuri pentru tabele `questions`
 --
 ALTER TABLE `questions`
   ADD PRIMARY KEY (`questionID`),
@@ -274,96 +300,108 @@ ALTER TABLE `questions`
   ADD KEY `FK_quiz` (`quizID`);
 
 --
--- Indexes for table `quiz`
+-- Indexuri pentru tabele `quiz`
 --
 ALTER TABLE `quiz`
   ADD PRIMARY KEY (`quizID`),
   ADD KEY `FK_tutorial` (`tutorialID`);
 
 --
--- Indexes for table `steps`
+-- Indexuri pentru tabele `steps`
 --
 ALTER TABLE `steps`
   ADD PRIMARY KEY (`stepID`);
 
 --
--- Indexes for table `tutorials`
+-- Indexuri pentru tabele `tutorials`
 --
 ALTER TABLE `tutorials`
   ADD PRIMARY KEY (`tutorialID`),
   ADD KEY `FK_quizz` (`quizID`);
 
 --
--- Indexes for table `users`
+-- Indexuri pentru tabele `unelte`
+--
+ALTER TABLE `unelte`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexuri pentru tabele `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pentru tabele eliminate
 --
 
 --
--- AUTO_INCREMENT for table `answers`
+-- AUTO_INCREMENT pentru tabele `answers`
 --
 ALTER TABLE `answers`
   MODIFY `answerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT for table `questions`
+-- AUTO_INCREMENT pentru tabele `questions`
 --
 ALTER TABLE `questions`
   MODIFY `questionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `quiz`
+-- AUTO_INCREMENT pentru tabele `quiz`
 --
 ALTER TABLE `quiz`
   MODIFY `quizID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `steps`
+-- AUTO_INCREMENT pentru tabele `steps`
 --
 ALTER TABLE `steps`
   MODIFY `stepID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `tutorials`
+-- AUTO_INCREMENT pentru tabele `tutorials`
 --
 ALTER TABLE `tutorials`
   MODIFY `tutorialID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pentru tabele `unelte`
+--
+ALTER TABLE `unelte`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT pentru tabele `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Constrângeri pentru tabele eliminate
 --
 
 --
--- Constraints for table `answers`
+-- Constrângeri pentru tabele `answers`
 --
 ALTER TABLE `answers`
   ADD CONSTRAINT `FK_question` FOREIGN KEY (`questionID`) REFERENCES `questions` (`questionID`);
 
 --
--- Constraints for table `questions`
+-- Constrângeri pentru tabele `questions`
 --
 ALTER TABLE `questions`
   ADD CONSTRAINT `FK_answer` FOREIGN KEY (`answerID`) REFERENCES `answers` (`answerID`),
   ADD CONSTRAINT `FK_quiz` FOREIGN KEY (`quizID`) REFERENCES `quiz` (`quizID`);
 
 --
--- Constraints for table `quiz`
+-- Constrângeri pentru tabele `quiz`
 --
 ALTER TABLE `quiz`
   ADD CONSTRAINT `FK_tutorial` FOREIGN KEY (`tutorialID`) REFERENCES `tutorials` (`tutorialID`);
 
 --
--- Constraints for table `tutorials`
+-- Constrângeri pentru tabele `tutorials`
 --
 ALTER TABLE `tutorials`
   ADD CONSTRAINT `FK_quizz` FOREIGN KEY (`quizID`) REFERENCES `quiz` (`quizID`);
