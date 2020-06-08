@@ -23,7 +23,7 @@
   display: table;
   float: left;
 }
-.logo_container h1{
+/* .logo_container h1{
   max-width: 100%;
   color: #4CAF50;
   height: 100%;
@@ -33,14 +33,13 @@
   font-size: 35px;
   font-weight: 200;
 }
+*/
 .logo_container h1 span{
   max-width: 100%;
-  font-weight: 1000;
 }
 .logo_container img{
   max-width: 100%;
   height: 69px;
-  float: middle;
   padding: 10px 0px;
 }
 .nav {
@@ -81,6 +80,7 @@ body{
   background-color: #CED0CE;
 }
 .quote{
+  z-index: -1;
   max-width: 100%;
   color:#210124;
   position: relative;
@@ -146,28 +146,30 @@ body{
   height: 700px;
   position: absolute;
   left:50%;
-  top: 67%;
+  top: 60%;
   transform: translate(-50%,-50%);
-  /* background-image: url(../images/1.jpg); */
+ /* background-image: url(../images/1.jpg);
+  */
   background-size: 100% 100%;
   box-shadow: 1px 2px 10px 5px white;
   animation: slider 12s infinite linear;
+  z-index: 1;
 }
 @keyframes slider{
   0% {
-     background-image: url(../images/1.jpg);
+      background-image: url(../images/1.jpg);
  }
   25% {
-     background-image: url(../images/2.jpg);
+      background-image: url(../images/2.jpg);
  }
   50% {
-     background-image: url(../images/3.jpg);
+      background-image: url(../images/3.jpg);
  }
   75% {
-     background-image: url(../images/4.jpg);
+      background-image: url(../images/4.jpg);
  }
   100% {
-     background-image: url(../images/5.jpg);
+      background-image: url(../images/5.jpg);
  }
 }
 .gallery-container{
@@ -212,64 +214,30 @@ body{
   margin-left: 130px;
   margin-right: 40px;
 }
-footer{
-  max-width: 100%;
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #E0E0E0;
- /* padding:0px 0px 0px 0px;
-  */
-  margin: 0 auto;
-  font-family: 'Montserrat';
-  font-size: 20px;
-  color: #4CAF50;
-  text-align: left;
-}
-.footer-company-name{
-  width: 100%;
-  position: relative;
-  left: 0;
-  bottom: 0;
-}
-/* @media screen and (max-width: 995px) , screen and (max-height: 700px) { */
-
-@media screen and (max-width:1200px){
-  footer .footer-company-name{
-      display: block;
-      position: relative;
-      width: 100%;
-      text-align: center;
- }
+@media screen and (max-width:1270px){
   .quote p{
-      margin-top: 5em;
-      margin-left: -2.5em;
+      margin-top: 2em;
+      margin-left: 2.5em;
+      z-index: -1;
  }
   .quote blockquote{
-      margin-left: -2.5em;
+      margin-left: 2.5em;
+      position: relative;
  }
   .slidershow{
-      margin-top: 4.5em;
+      margin-top: 2.5em;
  }
   .gallery-container{
       margin-left: 6em;
  }
+  .slidershow{
+      z-index: -1;
+ }
 }
-@media screen and (max-width: 800px), screen and (max-height: 700px){
-  footer .footer-company-name{
-      display: block;
-      position: relative;
-      width: 100%;
-      text-align: center;
- }
-  .quote p{
-      margin-top: 4em;
-      margin-left: -2.5em;
- }
+@media screen and (max-width: 800px){
   .quote blockquote{
-      margin-left: -2.5em;
+      margin-left: 1.5em;
+      z-index: -1;
  }
   .text{
       margin-left: -3.5em;
@@ -290,32 +258,17 @@ footer{
 @media screen and (max-width: 750px) {
   .slidershow{
       height: 650px;
-      margin-top: 10em;
+      margin-top: 5.5em;
  }
-  footer .footer-company-name{
-      display: block;
-      position: relative;
-      width: 100%;
-      text-align: center;
- }
-  .quote p{
-      margin-top: 10em;
-      margin-left: -2.5em;
+  .quote{
+      margin-left: 3.5em;
+      z-index: -1;
  }
   .quote blockquote{
-      margin-left: -2.5em;
+      margin-left: 3.5em;
+      z-index: -1;
  }
   .gallery-container{
       margin-left: 3em;
  }
 }
-@media screen and (max-width: 600px) {
-  .gallery-container{
-      margin-left: 0em;
- }
-}
-/* @media screen and (max-width: 1500px) {
-  .slidershow{
-      top:70%;
- }
-} */

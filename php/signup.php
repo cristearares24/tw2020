@@ -5,9 +5,6 @@ require "header.php";
 ?>
 
 <main>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
     <meta charset="UTF-8">
@@ -72,19 +69,9 @@ require "header.php";
                             header("Location: ./login.php");
                             exit();
                          }
-
                     }
                     ?>
       </div>
-
 </body>
-
 </html>
-
 </main>
-
-<?php
-
-require "footer.php";
-
-?>

@@ -78,14 +78,9 @@ text-decoration: none;
       font-weight: 200;
   }
   
-  .logo_container h1 span{
-      font-weight: 1000;
-  }
-  
   .logo_container img{
       width: 69px;
       height: 69px;
-      float: middle;
       padding: 10px 0px;
   }
   
@@ -103,7 +98,7 @@ text-decoration: none;
       width:650px;
       float: left;
       margin: 0 auto;
-      padding-left: 20px 10px;
+      padding-left: 20px;
       background-color: #CED0CE;
       box-shadow: 0 4px 10px 0 rgba(0,0,0,.5);
       font-family: 'Montserrat';
@@ -180,7 +175,7 @@ text-decoration: none;
   .container {
     background-color: #CED0CE;
     padding: 2vw 2vw;
-    width: 30vw;
+    width: 40vw;
     margin: auto;
     border-radius: 15px;
     font-family: sans-serif;
@@ -230,7 +225,7 @@ text-decoration: none;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 30vw;
+    width: 25vw;
     font-size: 1.8vw;
     font-family: 'Montserrat';
   }
@@ -269,8 +264,8 @@ text-decoration: none;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0;
-    border: 0;
+    /* margin: 0;
+    border: 0; */
     } 
     
     .logoHeader {

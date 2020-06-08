@@ -2,7 +2,6 @@
 // aici verificam ca a apasat butonul de submit si vrea sa isi faca cont
 if (isset($_POST['signup-submit']))
 {
-
     require 'dbconnection.php';
 
     $firstname = $_POST['firstname'];

@@ -10,15 +10,10 @@ require "header.php";
     <title>Chestionar</title>
 </head>
 
-
 <body>
- 
 	<div id="container">
-
 		<h1>Rezultat chestionar</h1>
-		
         <?php
-
             if (!isset($_SESSION['userId']))
             {
             echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";             
@@ -77,8 +72,6 @@ require "header.php";
                 $rezultate = mysqli_query($conn, "update quizresults set score = $total_correct where quizID=$quizID and id = $id");
             }
         ?>
-	
 	</div>
- 
 </body>
  

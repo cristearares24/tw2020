@@ -10,7 +10,7 @@
     height: 90px;
     display: inline-block;
     background-color: white;
-    margin: 0 auto;
+    margin: 0px;
 }
 
 .inner_header{
@@ -18,7 +18,6 @@
     height: 100%;
     display: block;
     margin: 0 auto;
-    /* background-color: #e0e0e0; */
 }
 
 .search-box{
@@ -85,14 +84,11 @@
     font-weight: 200;
 }
 
-.logo_container h1 span{
-    font-weight: 1000;
-}
+
 
 .logo_container img{
     width: 69px;
     height: 69px;
-    float: middle;
     padding: 10px 0px;
 }
 
@@ -106,10 +102,10 @@ body{
 }
 
 .profile-card{
-    width:650px;
+    width:50%;
     float: left;
     margin: 0 auto;
-    padding-left: 20px 10px;
+    /* padding-left: 30px; */
     background: #565264  ;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,.5);
     font-family: 'Montserrat';
@@ -136,7 +132,8 @@ body{
 }
 
 .image-container{
-    position:relative;
+    /* position:relative; */
+    z-index: 100;
 }
 
 .info{
@@ -169,45 +166,44 @@ body{
 .title{
     font-family: 'Montserrat';
     font-size: 30px;
-    position: absolute;
+    position: relative;
     left: 15px;
     bottom:0;
     color: #89023E;
 }
-
-footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 30px;
-    background-color: #E0E0E0;
-    padding:0px 0px 0px 0px;
-    margin: 0 auto;
-    font-family: 'Montserrat';
-    font-size: 20px;
-    color: #4CAF50;
-    text-align: left;
-}
-
-.footer-company-name{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-}
-
 .progress-card{
-    width:650px;
+    width:50%;
     float: left;
     margin: 0 auto;
-    padding-left: 20px 10px;
+    padding-left: 20px 16px;
     background: #565264  ;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,.5);
     font-family: 'Montserrat';
     color:white;
 }
 
+@media (max-width:900px){
+    /* .image-container{
+        position: relative;
+        z-index:-1;
+    } */
+    .title h2 {
+        position: relative; 
+        z-index: 0;
+    }
+    .profile-card{
+        position: relative; 
+        z-index: -1;
+    }
+}
 
-/* .fas fa-trophy{
-    padding-top: 1%;
-} */
+@media (max-width: 755px)
+{
+    .profile-card{
+        width: 100%;
+    }
+    .progress-card{
+        width: 100%;
+    }
+
+}
