@@ -20,7 +20,13 @@ require "header.php";
 
 
 </main>
-
+<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style/home.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Ghid pentru curți și grădini</title>
 <body>
   <div class="quote">
     <p><b>Bine ați venit la <span>Ghid</span> curți și grădini</b></p>
