@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
   margin: 0;
   padding: 0;
@@ -153,4 +154,156 @@ section{
   .logo_container h1{
     display: none;
   }
+=======
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+.logo_container{
+    max-width:100%;
+    height: 100%;
+    display: table;
+    float: left;
+  }
+.logo_container h1{
+    max-width: 100%;
+    color: #4CAF50;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Montserrat';
+    font-size: 35px;
+    font-weight: 200;
+  }
+.logo_container h1 span{
+    max-width: 100%;
+    font-weight: 1000;
+  }
+.logo_container img{
+    max-width: 100%;
+    height: 69px;
+    margin: 10px;
+    float: middle;
+    padding: 10px 0px;
+}
+
+nav{
+  background: white;
+  height: 80px;
+  width: 100%;
+}
+label.logo{
+  color: #f2f2f2;
+  font-size: 33px;
+  line-height: 80px;
+  padding: 0 140px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+}
+nav ul{
+  float: right;
+  margin-right: 60px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 2px;
+}
+nav ul li a{
+  color: #4CAF50;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  /* text-transform: uppercase; */
+  font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    width: 100%;
+    height: 90px;
+    display: inline-block;
+    background-color: white;
+    margin: 0 auto;
+  }
+.inner_header{
+    width: 80%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+.checkbtn{
+  font-size: 30px;
+  color: #4CAF50;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+/* @media (max-width: 1000px){
+  label.logo{
+    font-size: 27px;
+    padding-left: 25px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+} */
+@media (max-width: 1250px){
+  .checkbtn{
+    display: block;
+    margin-right: 0px;
+    }
+  ul{
+    /* position: fixed; */
+    width: 100%;
+    height: 450px;
+    background: gray;
+    top: 90px;
+    right: -150%;
+    text-align: center;
+    transition: all .5s;
+    z-index: 0;
+    position:absolute;
+  }
+  nav ul{
+      margin-right: 0px;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: white;
+  }
+  #check:checked ~ ul{
+
+    right: 0px;
+    width:25%;
+  }
+  
+}
+section{
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+
+@media (max-width: 600px){
+    #check:checked ~ ul{
+        width:90%;
+      }
+>>>>>>> 078e71988cdbd04561d40db9db26d1bd2264b2ea
 }
