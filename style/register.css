@@ -1,26 +1,3 @@
-
-footer{
-    max-width: 100%;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    background-color: #E0E0E0;
-   /* padding:0px 0px 0px 0px;
-    */
-    margin: 0 auto;
-    font-family: 'Montserrat';
-    font-size: 20px;
-    color: #4CAF50;
-    text-align: left;
-}
-.footer-company-name{
-    width: 100%;
-    position: relative;
-    left: 0;
-    bottom: 0;
-}
 .title{
     font-family: 'Montserrat';
     font-size: 30px;
@@ -29,49 +6,7 @@ footer{
     bottom:0;
     color: #035963;
 }
-.main-container{
-    font-family: 'Montserrat';
-    padding:20px;
-    color: white;
-}
-*{
-    margin:0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-}
-.header{
-    width: 100%;
-    height: 90px;
-    display: inline-block;
-    background-color: white;
-    margin: 0 auto;
-}
-.inner_header{
-    width: 80%;
-    height: 100%;
-    display: block;
-    margin: 0 auto;
-}
-.logo_container{
-    height: 100%;
-    display: table;
-    float: left;
-}
-.logo_container h1{
-    color: #4CAF50;
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    font-family: 'Montserrat';
-    font-size: 35px;
-    font-weight: 200;
-}
-.logo_container img{
-    width: 69px;
-    height: 69px;
-    padding: 10px 0px;
-}
+
 body{
     background-image: url(../images/log4.jpg);
     margin:0;
@@ -82,88 +17,17 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
-.profile-card{
-    width:650px;
-    float: left;
-    margin: 0 auto;
-    padding-left: 20px;
-    background-color: #CED0CE;
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,.5);
-    font-family: 'Montserrat';
-}
-.nav {
-    float: left;
-    height: 100%;
-    padding: 10px 0px 20px 20px;
-}
-.nav a{
-    height:100%;
-    display:table;
-    float: left;
-    padding: 0px 20px;
-}
-.nav a li{
-    display :table-cell;
-    vertical-align: middle;
-    height: 100%;
-    color:#4CAF50;
-    font-family: 'Montserrat';
-    font-size: 20px;
-}
-.search-box{
-    max-width: 100%;
-    position: absolute;
-    top: 5%;
-    left:85%;
-    transform: translate(-50%,-50%);
-    background: #4CAF50;
-    height: 40px;
-    border-radius: 40px;
-    padding:10px;
-}
-.search-box:hover > .search-txt{
-    max-width: 100%;
-    width: 240px;
-    padding: 0 6px;
-}
-.search-box:hover > .search-btn{
-    background: #4CAF50;
-}
-.search-btn{
-    max-width: 100%;
-    color: white;
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #4CAF50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-}
-.search-txt{
-    max-width: 100%;
-    border:none;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color:white;
-    font-size: 20px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
-}
+
 .container {
     background-color: #CED0CE;
     padding: 2vw 2vw;
-    width: 30vw;
+    width: 30%;
     margin: auto;
     border-radius: 15px;
     font-family: 'Montserrat';
-    margin-top: 0;
+    margin-top: 3%;
     justify-content: center;
     
 }
@@ -206,7 +70,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 30vw;
+    width: 25vw;
     font-size: 1.8vw;
     font-family: 'Montserrat';
 }
@@ -222,11 +86,11 @@ button:hover {
 }
 @media only screen and (max-width: 600px){
     button{
-        width: 60vw;
+        width: 45vw;
         font-size: 3vw;
    }
     .container{
-        margin-top: 50%;
+        margin-top: 20%;
         width: 60vw;
         padding: 3vw 6vw;
    }
@@ -241,55 +105,3 @@ button:hover {
    }
 }
 
-.logoHeader {
-    font-size: 40px;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    margin: auto;
-}
-.antet {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    height: 3.7em;
-   /* height: 3.7vw;
-    */
-    margin: auto;
-    align-items: center;
-    background-image: linear-gradient(to right, #071731, #132d57, #071731);
-    background-position: top;
-}
-#fii {
-    width: auto;
-    height: 100%;
-}
-#univ {
-    width: auto;
-    height: 90%;
-}
-#titlu{
-    font-size: 3vw;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    text-align: center;
-    color: white;
-}
-@media only screen and (max-width: 600px){
-    #fii {
-        width: auto;
-        height: 10vw;
-   }
-    #univ {
-        width: auto;
-        height: 10vw;
-   }
-    #titlu{
-        font-size: 3.5vw;
-        font-family: 'Montserrat';
-        font-weight: bold;
-        text-align: center;
-        color: white;
-   }
-}

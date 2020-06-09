@@ -38,8 +38,15 @@ if (isset($_POST['login-submit']))
                 {
                     session_start();
                     $_SESSION['userId']=$row['id'];
-                    $_SESSION['email']=$row['email'];
-
+                    $id = $row['id'];	
+	                $_SESSION['email']=$row['email'];	
+	                $rezultate = mysqli_query($conn, "select quizID from tutorials where quizID not in (select quizID from quizresults where id = $id)");	
+	                while($rez = mysqli_fetch_array($rezultate))	
+	                    {   	
+	                        $r = $rez['quizID'];	
+	                        $score = mysqli_query($conn, "INSERT INTO quizresults(id, quizID, score) VALUES ($id, $r, NULL)");	
+		
+	                    }
                     header("Location: ./index.php?login=success");
                     exit();
 
@@ -58,4 +65,3 @@ else
     header("Location: ./index.php");
     exit();
 }
-

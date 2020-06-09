@@ -34,12 +34,10 @@ $str .= "<rss version = '2.0' >";
 $str .= "</rss>";
 
 file_put_contents("rss.xml", $str);
-// header("Location: ./myProfile.php");
 header("Location: ./rss.xml");
 exit();
 ?>
 
-<!-- taget se dechide in alta pagina. -->
 <a href="rss.xml" target="_blank">
    <img src="../images/rss.png" style="width:50px;height:50px;"> 
 </a>
