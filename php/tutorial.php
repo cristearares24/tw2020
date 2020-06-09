@@ -4,8 +4,15 @@ require "header.php";
 
 ?>
 
-<link rel="stylesheet" type="text/css" href="../style/tutorial1.css">
-<title>Tutoriale</title>
+<main>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style/tutorial1.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Tutoriale</title>
+</head>
 
 <body>
   <div class="content">
@@ -14,7 +21,7 @@ require "header.php";
 
         if (!isset($_SESSION['userId']))
         {
-          //echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";             
+          echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";             
           //header("Location: ./index.php");
           exit();
         }
