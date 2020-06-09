@@ -30,7 +30,7 @@ session_start();
                     <li><a href="./tutoriale.php">Tutoriale</a></li>
                     <form action="./myProfile.php" style="display:inline" method="POST">
                         <input type="hidden" name="profileresults" id="inp" value=" " />
-                        <li><a href="javascript:;" onclick="myFunction(); parentNode.parentNode.submit()">Profilul meu</a></li>
+                        <li> <a href="javascript:;" onclick="ajaxRequest(this); ">Profilul meu</a></li>
                     </form>
                         <li><a href="../unelte.html">Unelte</a></li>               
                         <?php
@@ -57,4 +57,30 @@ session_start();
   
       //id.href += "?quizresults=" + sessionStorage.getItem("profileresults");
     }
+
+
+        ajaxRequest = function(par) {
+            var xmlhttp = new XMLHttpRequest(); 
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == XMLHttpRequest.DONE) { 
+                    if (xmlhttp.status == 200) {
+                        var x = document.getElementById("inp");
+                        x.value = xmlhttp.responseText;
+                        par.parentNode.parentNode.submit();
+                        // xmlhttp.open("POST", "myProfile.php");
+                        // xmlhttp.setRequestHeader("Content-Type", "application/json");
+                        // xmlhttp.send(xmlhttp.responseText);
+
+                    }
+                    else if (xmlhttp.status == 400) {
+                        alert('There was an error 400');
+                    }
+                    else {
+                        alert('something else other than 200 was returned' + xmlhttp.responseText);
+                    }
+                }
+            };
+            xmlhttp.open("GET", "http://localhost/gart/php/profileresults.php?userId=" + <?php echo $_SESSION["userId"]; ?>, true);
+            xmlhttp.send();
+        }
   </script>

@@ -1,8 +1,8 @@
-<?php
+<!-- <?php
 
-require "header.php";
+// require "header.php";
 
-?>
+// ?> -->
 
 <main>
 <!DOCTYPE html>

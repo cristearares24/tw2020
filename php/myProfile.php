@@ -51,11 +51,10 @@ require "header.php";
         foreach ($rez as $tutorial) {
             $title = $tutorial["title"];
             $score = $tutorial["score"];
-            $progress = ($score / 4) * 100 - 5;
-            $progress1 = $progress + 5; 
+            $progress = ($score / 4) * 100 ;
             echo "<p style=\"margin-left:1%\">$title</p>";
             echo "<div class=\"skill-bar\">";
-            echo "<div class=\"progress-bar\" style=\"width:$progress%\">$progress1%</div>";
+            echo "<div class=\"progress-bar\" style=\"width:$progress%\">$progress%</div>";
             echo "</div>";
         }
         ?>    
