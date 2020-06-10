@@ -93,7 +93,7 @@ nav ul li a{
     display: block;
     margin-right: 0px;
     }
-  ul{
+  nav ul{
     /* position: fixed; */
     width: 100%;
     height: 450px;
@@ -135,7 +135,7 @@ section{
 
 @media (max-width: 600px){
     #check:checked ~ ul{
-        width:100%;
+        width:90%;
       }
 }
 
@@ -145,7 +145,6 @@ section{
     padding: 0;
     margin: 0;
   }
-
   
 }
 
