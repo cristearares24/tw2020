@@ -58,11 +58,7 @@ require "header.php";
                 <input id=\"repeta\" type=\"submit\" value=\"Repeta quiz\">
                 </form>";
             }
-            else {
-                echo "<form action=\"tutoriale.php\">
-                <input id=\"repeta\" type=\"submit\" value=\"Mergi la tutoriale\">
-                </form>";
-            }
+
             $quizID = $_POST["quizID"];
             $id = $_SESSION["userId"];
             $rez = mysqli_query($conn, "select * from quizresults where id= $id and quizID = $quizID");
