@@ -161,3 +161,156 @@ h1 {
   margin: 0 auto;
   display: block;
 }
+
+@media screen and (max-width: 1130px)
+{
+    h1{
+        font-size: 30px;
+    }
+    .quiz{
+        font-size: 15px;
+    }
+    #rasp{
+      font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 1055px)
+{
+    h1{
+        font-size: 28px;
+    }
+    .quiz{
+        font-size: 14px;
+    }
+    #rasp{
+      font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 985px)
+{
+    h1{
+        font-size: 25px;
+    }
+    .quiz{
+        font-size: 13px;
+    }
+
+    #repeta{
+        width: 90px;
+        height: 35px;
+        font-size: 13px;
+    
+      }
+      #rasp{
+        font-size: 34px;
+      }
+}
+
+@media screen and (max-width: 885px)
+{
+    h1{
+        font-size: 22px;
+    }
+    .quiz{
+        font-size: 12px;
+    }
+    #repeta{
+        width: 85px;
+        height: 30px;
+        font-size: 12px;
+    
+      }
+      #rasp{
+        font-size: 33px;
+      }
+}
+
+@media screen and (max-width: 775px)
+{
+    h1{
+        font-size: 20px;
+    }
+    .quiz{
+        font-size: 11px;
+    }
+    #repeta{
+        width: 75px;
+        height: 20px;
+        font-size: 11px;
+    
+      }
+      #rasp{
+        font-size: 30px;
+      }
+}
+
+@media screen and (max-width: 705px)
+{
+    h1{
+        font-size: 18px;
+    }
+    .quiz{
+        font-size: 10px;
+    }
+    #repeta{
+        width: 70px;
+        font-size: 10px;
+    
+      }
+      #rasp{
+        font-size: 28px;
+      }
+}
+
+@media screen and (max-width: 635px)
+{
+    h1{
+        font-size: 17px;
+
+}
+#rasp{
+  font-size: 26px;
+}}
+
+@media screen and (max-width: 600px)
+{
+    h1{
+        font-size: 16px;
+    }
+    #repeta{
+        width: 60px;
+    
+      }
+      #rasp{
+        font-size: 25px;
+      }
+    }
+
+@media screen and (max-width: 435px)
+{
+    h1{
+        font-size: 15px;}
+        #repeta{
+            width: 55px;
+        
+          }
+          #rasp{
+            font-size: 24px;
+          }
+
+}
+
+@media screen and (max-width: 375px)
+{
+    h1{
+        font-size: 14px;}
+        #repeta{
+            width: 50px;
+        
+          }
+          #rasp{
+            font-size: 23px;
+          }
+}
