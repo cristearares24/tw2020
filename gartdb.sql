@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2020 at 12:28 PM
+-- Generation Time: Jun 11, 2020 at 01:42 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -99,7 +99,7 @@ INSERT INTO `answers` (`answerID`, `answerString`, `questionID`) VALUES
 
 CREATE TABLE `questions` (
   `questionID` int(11) NOT NULL,
-  `questionString` varchar(100) NOT NULL,
+  `questionString` varchar(50) NOT NULL,
   `answerID` int(11) NOT NULL,
   `quizID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -110,19 +110,19 @@ CREATE TABLE `questions` (
 
 INSERT INTO `questions` (`questionID`, `questionString`, `answerID`, `quizID`) VALUES
 (1, 'La cine poti apela cand vrei sa amenajezi gradina?', 1, 1),
-(2, 'Din ce este alcatuit un sistem de drenaj?', 6, 1),
+(2, 'Din ce este alcatuit un sistem de drenaj', 6, 1),
 (3, 'Cate kilograme de seminte sunt necesare la 100mp?', 11, 1),
-(4, 'Care sunt cele mai potrivite perioade pentru plantatie?', 13, 1),
-(5, 'Cum trebuie sa fie terenul pe care construiesti gradina?', 18, 2),
-(6, 'Care este locul potrivit pentru amplasarea unui iaz?', 22, 2),
+(4, 'Care sunt cele mai potrivite perioade pentru plant', 13, 1),
+(5, 'Cum trebuie sa fie terenul pe care construiesti gr', 18, 2),
+(6, 'Care este locul potrivit pentru amplasarea unui ia', 22, 2),
 (7, 'Ce poti construi pentru o bucatarie rustica?', 23, 2),
 (8, 'Care dintre urmatorii sunt pomi fructiferi pitici?', 26, 2),
 (9, 'Care este elementul central la gradinile rustice?', 29, 3),
 (10, 'Ce fel de tufisuri sunt in gradinile frantuzesti?', 32, 3),
-(11, 'Ce poti planta pentru a delimita spatiile cu flori?', 36, 3),
-(12, 'Care sunt culorile predominante in gradinile moderne?', 40, 3),
+(11, 'Ce poti planta pentru a delimita spatiile cu flori', 36, 3),
+(12, 'Care sunt culorile predominante in gradinile moder', 40, 3),
 (13, 'Cum trebuie ridicata o curte de dimensiune mica?', 42, 4),
-(14, 'Cum trebuie aranjate florile intr-o curte in panta?', 44, 4),
+(14, 'Cum trebuie aranjate florile intr-o curte in panta', 44, 4),
 (15, 'Cum se poate rezolva problema nisipului la mare?', 49, 4),
 (16, 'Cu ce pot fi inlocuite pavajele in zona de munte?', 51, 4);
 
@@ -156,7 +156,7 @@ INSERT INTO `quiz` (`quizID`, `tutorialID`) VALUES
 CREATE TABLE `quizresults` (
   `id` int(11) NOT NULL,
   `quizID` int(11) NOT NULL,
-  `score` int(11) NOT NULL
+  `score` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -164,7 +164,16 @@ CREATE TABLE `quizresults` (
 --
 
 INSERT INTO `quizresults` (`id`, `quizID`, `score`) VALUES
-(2, 1, 4);
+(1, 1, 4),
+(1, 2, 4),
+(4, 1, 4),
+(4, 2, 1),
+(4, 3, 2),
+(4, 4, NULL),
+(3, 1, NULL),
+(3, 2, NULL),
+(3, 3, NULL),
+(3, 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -236,6 +245,29 @@ INSERT INTO `tutorials` (`tutorialID`, `title`, `description`, `difficulty`, `qu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `unelte`
+--
+
+CREATE TABLE `unelte` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `image` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `unelte`
+--
+
+INSERT INTO `unelte` (`id`, `name`, `description`, `image`) VALUES
+(1, 'Grebla', 'Grebla este o unealtă folosită în horticultură pentru a strânge frunze, fân, iarbă sau în grădinărit pentru a afâna sau a nivela pământul.', '\'https://s12emagst.akamaized.net/products/617/616987/images/res_9c0a34020d1cc67054bf22762215d8d2_full.jpg\''),
+(2, 'Lopata', 'Lopata este o unealtă constituită dintr-o bucată de tablă metalică sau o placă de lemn sau de plastic, ușor concavă, cu marginile laterale puțin răsfrânte, montată pe o coadă de lemn, folosită la ridicarea și aruncarea unui material', '\'https://s12emagst.akamaized.net/products/8251/8250082/images/res_4e2877875235013b204c5d9f6f9b8862_full.jpg\''),
+(3, 'Furtun extensibil', 'Furtunul extensibil este ideal în cazul în care cauți unul ușor de purtat și care să nu ocupe mult spațiu, să fie ușor de rulat și derulat. Asta pentru că are proprietatea specială de a se alungi automat. În momentul în care este conectat la robinet și umplut cu apă, acesta își poate depăși de trei ori lungimea inițială, iar pentru a reveni la forma inițială este suficient să îl golești de apă.', '\'https://s12emagst.akamaized.net/products/20917/20916095/images/res_6114ba43c77b17619b7f09d896eb1a21_full.jpg\''),
+(4, 'Drujba', 'Fierastrau electric cu lant, usor de folosit si puternic pentru utilizare indelungata si fara efort. Intindere rapida a lantului, fara scule suplimentare.', '\'https://s12emagst.akamaized.net/products/17097/17096764/images/res_2b03eb6278404ecfbbfb5eaf81d0ca41_450x450_it8j.jpg\'');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -244,15 +276,19 @@ CREATE TABLE `users` (
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `pwd` longtext NOT NULL
+  `pwd` longtext NOT NULL,
+  `user-type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `pwd`) VALUES
-(2, 'Alina', 'Popa', 'alinapopa0610@gmail.com', '$2y$10$h6zcFGljoKFqouPMP.WjVev/s2IyBSiru/ed9MDyGzskgC3ldpcny');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `pwd`, `user-type`) VALUES
+(1, 'Alina', 'Popa', 'alinapopa0610@gmail.com', 'bineaivenit', 0),
+(2, 'Cristea', 'Rares', 'cristearares24@yahoo.ro', '$2y$10$w07Aa2VDWmXHcs9e2tcoceZYvv/5waeuYtkVABxFCklramHqsZLY2', 0),
+(3, 'admin', 'admin', 'admin@admin.ro', '$2y$10$77v8mbQvYcOanTup0Lg.uu4GobJw4wXeiqfr3PURqMfgyZYvDCPtO', 1),
+(4, 'bunazi', 'bunazi', 'bunazi@yahoo.com', '$2y$10$HH0KCxe7SnLkrZvsvwc0rOUftMIuP.Tb8GERMTJPE1C3gIME0gu5C', 0);
 
 --
 -- Indexes for dumped tables
@@ -294,6 +330,12 @@ ALTER TABLE `tutorials`
   ADD KEY `FK_quizz` (`quizID`);
 
 --
+-- Indexes for table `unelte`
+--
+ALTER TABLE `unelte`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -325,19 +367,25 @@ ALTER TABLE `quiz`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `stepID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `stepID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tutorials`
 --
 ALTER TABLE `tutorials`
-  MODIFY `tutorialID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `tutorialID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `unelte`
+--
+ALTER TABLE `unelte`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
