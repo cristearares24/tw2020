@@ -63,7 +63,7 @@ require "header.php";
         }
         ?>    
         <div>
-        <p style="text-align:center; margin-top:2%"><i><i class="fas fa-trophy"></i> Top 3 cei mai buni</i></p>
+        <p style="text-align:center; margin-top:2%"><i><i class="fas fa-trophy"></i> Top cei mai buni</i></p>
         <?php
         $top = $fullRez["top"];
         $count = 0;

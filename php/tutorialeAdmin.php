@@ -41,11 +41,11 @@ require "headerAdmin.php";
     $tutorial = $tutorial["tutorialID"];
     if($tutorial == 0) {$count = $count + 1; continue;}
     $rezultate = mysqli_query($conn, "select score from quizresults where quizID = $i and id = $id");
-    if (mysqli_num_rows($rezultate) == 0) {
+    $rezultate = mysqli_fetch_array($rezultate);
+    if ($rezultate["score"] == 0) {
       echo "<li class = \"progressbar_begin\">".$title."</li>";
     }
     else{
-    $rezultate = mysqli_fetch_array($rezultate);
     $rezultate = $rezultate["score"];
     if ($rezultate >= 0 && $rezultate < 3){
       echo "<li class = \"progressbar_inprogress\">".$title."</li>";
