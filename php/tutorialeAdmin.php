@@ -42,12 +42,11 @@ require "header.php";
     $tutorial = $tutorial["tutorialID"];
     if($tutorial == 0) {$count = $count + 1; continue;}
     $rezultate = mysqli_query($conn, "select score from quizresults where quizID = $i and id = $id");
-    $rezultate = mysqli_fetch_array($rezultate);
-    if ($rezultate['score'] == NULL) {
+    if (mysqli_num_rows($rezultate) == 0) {
       echo "<li class = \"progressbar_begin\">".$title."</li>";
     }
     else{
-    //$rezultate = mysqli_fetch_array($rezultate);
+    $rezultate = mysqli_fetch_array($rezultate);
     $rezultate = $rezultate["score"];
     if ($rezultate >= 0 && $rezultate < 3){
       echo "<li class = \"progressbar_inprogress\">".$title."</li>";
@@ -63,10 +62,8 @@ require "header.php";
   // $quizID_count = mysqli_query($conn, "select count(*) from tutorials");
   for ($i = 1; $i <= $quizID_count; $i++)
   {
-    $title = mysqli_query($conn, "select title from tutorials where quizID = $i");
-    $title = mysqli_fetch_array($title);
-    $title = $title["title"];
-    echo "<div class=\"tutorial\"> <div class=\"Nume\"> <p>$title</p> </div>";
+    echo "<div class=\"tutorial\"> <div class=\"Nume\"> <p>$title</p> <form method='get'> <button name='delete' value='$id'>
+    <img src='https://image.flaticon.com/icons/png/512/61/61848.png' height='35' width='30'></button></div>";
     echo "<div class=\"continutstyle\"> <ul>";
     $tutorial = mysqli_query($conn, "select tutorialID from tutorials where tutorialID = $i");
     $tutorial = mysqli_fetch_array($tutorial);
