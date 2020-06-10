@@ -135,7 +135,7 @@ section{
 
 @media (max-width: 600px){
     #check:checked ~ ul{
-        width:90%;
+        width:100%;
       }
 }
 
@@ -145,6 +145,7 @@ section{
     padding: 0;
     margin: 0;
   }
+
   
 }
 

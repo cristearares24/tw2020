@@ -32,7 +32,10 @@ require "header.php";
             exit();
         }
 
-        $rez = json_decode($_POST["profileresults"], true);
+        $fullRez = json_decode($_POST["profileresults"], true);
+
+
+        $rez = $fullRez["stats"];
         // var_dump(json_decode($rez, true));
         $firstname = $rez[0]["firstname"];
         $lastname = $rez[0]["lastname"];
@@ -60,10 +63,20 @@ require "header.php";
         ?>    
         <div>
         <p style="text-align:center; margin-top:2%"><i><i class="fas fa-trophy"></i> Top 3 cei mai buni</i></p>
-        <p style="text-align:center"><i>1.Nume/prenume; Scor obtinut</i> 100%</p>
-        <p style="text-align:center"><i>2.Nume/prenume; Scor obtinut</i> 95%</p>
-        <p style="text-align:center; margin-bottom:2%"><i>3.Nume/prenume; Scor obtinut</i> 90%</p>
-        <img onclick="window.location.href='./rss.php'" name="rss-image" src="../images/rss.png" style="width:50px;height:50px;"> 
+        <?php
+        $top = $fullRez["top"];
+        $count = 0;
+        foreach($top as $user)
+        {
+            $count += 1;
+            $firstname = $user["firstname"];
+            $lastname = $user["lastname"];
+            $score = $user["score"];
+            if($count <= 5 && !empty($score))
+                echo "<p style=\"text-align:center\"><i>$count. $firstname $lastname: </i> $score</p>";
+        }
+        ?>
+        <img onclick="window.open('./rss.php')" name="rss-image" src="../images/rss.png" style="width:50px;height:50px;"> 
         </div>
     </div>
     

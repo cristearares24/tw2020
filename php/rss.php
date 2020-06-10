@@ -20,14 +20,13 @@ $str .= "<rss version = '2.0' >";
         {
             die("Connection failed: ".mysqli_connect_error());
         }
-        $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id ASC ");
+        $result = mysqli_query($conn, "SELECT  firstname, lastname, avg(score) AS score FROM quizresults NATURAL JOIN users GROUP BY id ORDER BY avg(score) DESC LIMIT 5");
         
         while($row = mysqli_fetch_object($result)){
             $str .="<item>";
                 $str .= "<title>.$row->firstname.</title>";
                 $str .= "<description>.$row->lastname.</description>";
-                // $str .= "<link> . $row->email . </link>";
-                $str .= "<link>.$web_url.$profile_url.$row->id.</link>";
+                $str .= "<link> . $row->score . </link>";
             $str .="</item>";
         }
     $str .= "</channel>";

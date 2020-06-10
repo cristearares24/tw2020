@@ -80,7 +80,7 @@ session_start();
                     }
                 }
             };
-            xmlhttp.open("GET", "http://localhost/gart/php/profileresults.php?userId=" + <?php echo $_SESSION["userId"]; ?>, true);
+            xmlhttp.open("GET", "http://localhost:81/final/tw2020/php/profileresults.php?userId=" + <?php echo $_SESSION["userId"]; ?>, true);
             xmlhttp.send();
         }
   </script>
