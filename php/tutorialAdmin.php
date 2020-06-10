@@ -11,15 +11,40 @@ require "header.php";
   <div class="content">
     <div id="listing">
       <?php
+             require 'dbconnection.php';
 
         if (!isset($_SESSION['userId']))
         {
-          //echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";             
-          //header("Location: ./index.php");
+          echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";             
+          // header("Location: ./index.php");
           exit();
         }
+
+        if(isset($_POST['name'])){
+          $name = $_POST["name"];
+          $descriere = $_POST["description"];
+          $tutorialID = $_GET["tutorialID"];
+          if (!empty($_POST['name'])) {
+          $sql = "INSERT INTO `steps` (`stepID`, `title`, `content`, `tutorialID`) VALUES (NULL, '$name', '$descriere', $tutorialID);";
+          mysqli_query($conn, $sql);
+        }}
     
-       require 'dbconnection.php';
+        if(isset($_POST['delete'])){
+          $id = $_POST['delete'];
+          $sql = "DELETE FROM steps WHERE stepID=$id";
+          mysqli_query($conn, $sql);
+        }
+
+       echo "<div class=\"title\">";
+       echo 'Adaugare pas';
+       echo "</div>";
+       echo "<div class=\"continut\">";
+       echo '<form method="post">
+       Titlu: <input type="text" name="name">
+       Descriere: <input type="text" name="description">
+       <input type="submit">
+       </form>';
+              echo "</div>";
 
        $id = $_SESSION["userId"];
        $tutorialID = $_GET["tutorialID"];
@@ -30,16 +55,17 @@ require "header.php";
        if ($dif == "Usor")
        {
           
-          $pasi = mysqli_query($conn, "select title, content from steps where tutorialID =".$tutorialID);
+          $pasi = mysqli_query($conn, "select title, content, stepID from steps where tutorialID =".$tutorialID);
           while ($row = mysqli_fetch_array($pasi))
           {
+            $idStep = $row["stepID"];
             echo "<div class=\"title\">";
             echo $row["title"];
+            echo "<form method='post'> <button name='delete' value='$idStep' ><img src='https://image.flaticon.com/icons/png/512/61/61848.png' height='35' width='30'></button>";
             echo "</div>";
             echo "<div class=\"continut\">";
             echo $row["content"];
             echo "</div>";
-
            
           }
           echo "</div>";

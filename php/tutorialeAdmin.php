@@ -62,10 +62,8 @@ require "header.php";
   // $quizID_count = mysqli_query($conn, "select count(*) from tutorials");
   for ($i = 1; $i <= $quizID_count; $i++)
   {
-    $title = mysqli_query($conn, "select title from tutorials where quizID = $i");
-    $title = mysqli_fetch_array($title);
-    $title = $title["title"];
-    echo "<div class=\"tutorial\"> <div class=\"Nume\"> <p>$title</p> </div>";
+    echo "<div class=\"tutorial\"> <div class=\"Nume\"> <p>$title</p> <form method='get'> <button name='delete' value='$id'>
+    <img src='https://image.flaticon.com/icons/png/512/61/61848.png' height='35' width='30'></button></div>";
     echo "<div class=\"continutstyle\"> <ul>";
     $tutorial = mysqli_query($conn, "select tutorialID from tutorials where tutorialID = $i");
     $tutorial = mysqli_fetch_array($tutorial);
