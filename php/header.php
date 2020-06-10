@@ -32,7 +32,7 @@ session_start();
                         <input type="hidden" name="profileresults" id="inp" value=" " />
                         <li> <a href="javascript:;" onclick="ajaxRequest(this); ">Profilul meu</a></li>
                     </form>
-                        <li><a href="../unelte.php">Unelte</a></li>               
+                        <li><a href="./unelte.php">Unelte</a></li>               
                         <?php
                         if (isset($_SESSION['userId']))
                         {
