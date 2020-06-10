@@ -5,124 +5,6 @@
   text-decoration: none;
 }
 
-.header{
-  width: 100%;
-  height: 90px;
-  display: inline-block;
-  background-color: white;
-  margin: 0 auto;
-}
-
-.inner_header{
-  width: 80%;
-  height: 100%;
-  display: block;
-  margin: 0 auto;
-}
-
-.logo_container{
-  max-width:100%;
-  height: 100%;
-  display: table;
-  float: left;
-}
-
-.logo_container h1{
-  max-width: 100%;
-  color: #4CAF50;
-  height: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  font-family: 'Montserrat';
-  font-size: 35px;
-  font-weight: 200;
-}
-
-.logo_container h1 span{
-  max-width: 100%;
-  font-weight: 1000;
-}
-
-.logo_container img{
-  max-width: 100%;
-  height: 69px;
-  float: middle;
-  padding: 10px 0px;
-}
-
-.nav {
-  max-width: 100%;
-  float: left;
-  height: 80px;
-  padding: 10px 0px 20px 20px;
-}
-
-.nav a{
-  max-width: 100%;
-  height: 80px;
-  display:table;
-  float: left;
-  padding: 0px 20px;
-}
-
-.nav a li{
-  max-width: 100%;
-  display :table-cell;
-  vertical-align: middle;
-  height: 90px;
-  color:#4CAF50;
-  font-family: 'Montserrat';
-  font-size: 20px;
-}
-
-.search-box{
-  max-width: 100%;
-  position: absolute;
-  top: 5%;
-  left:85%; 
-  transform: translate(-50%,-50%);
-  background: #4CAF50;
-  height: 40px;
-  border-radius: 40px;
-  padding:10px;
-}
-.search-box:hover > .search-txt{
-  max-width: 100%;
-  width: 240px;
-  padding: 0 6px;
-}
-.search-box:hover > .search-btn{
-  background: #4CAF50;
-}
-
-.search-btn{
-  max-width: 100%;
-  color: white;
-  float: right;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #4CAF50;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
-}
-
-.search-txt{
-  max-width: 100%;
-  border:none;
-  background: none;
-  outline: none;
-  float: left;
-  padding: 0;
-  color:white;
-  font-size: 20px;
-  transition: 0.4s;
-  line-height: 40px;
-  width: 0px;
-}
-
 body{
   max-width: 100%;
   margin:0;
@@ -184,6 +66,7 @@ body{
     bottom: 0px;
     width: 100%;
     font-weight: bold;
+    padding-top: 2%;
 }
 
 
@@ -199,7 +82,7 @@ h1{
 .progressbar li {
   list-style: none;
   display: inline-block;
-  width: 15%;
+  width: 20%;
   position: relative;
   text-align: center;
  color: black;
@@ -272,13 +155,73 @@ h1{
 }
 
 
+@media screen and (max-width: 1255px)
+{
+  .progressbar li{
+    font-size:17px;
+} 
+.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 50px;
+   height: 50px;
+   line-height:50px;
+   }
+}
+
+@media screen and (max-width: 1070px)
+{
+  
+    .progressbar li{
+      font-size:16px;
+    }
+
+}
+
+@media screen and (max-width: 1015px)
+{
+  
+    .progressbar li{
+      font-size:15.5px;
+    }
+
+}
+
+@media screen and (max-width: 982px)
+{
+  
+    .progressbar li{
+      font-size:15px;
+    }
+
+}
+/* @media screen and (max-width: 1255px)
+{
+  .progressbar li{
+    font-size:13px;
+} 
+}
+
+@media screen and (max-width: 1125px)
+{
+  .progressbar li{
+    font-size:12px;
+} 
+}
+
+@media screen and (max-width: 1035px)
+{
+  .progressbar li{
+    font-size:11px;
+} 
+} */
 
 @media screen and (max-width: 970px)
 {
-/* .jumbotron h1{
+    .jumbotron h1{
      font-size: 18pt;
-} */
-h1{
+  } 
+ h1{
   font-size: 15pt;
 }
 .continutstyle p {
@@ -298,36 +241,54 @@ font-size: 15px;
 
 .continutstyle ul{
   padding-left: 1.5em;
-}
- /* .grid-container{
-     grid-template-rows: 0.1fr 1.2fr 0.1fr 0.1fr 0.1fr 0.9fr 0.1fr; */
+}  
+  .grid-container{
+     grid-template-rows: 0.1fr 1.2fr 0.1fr 0.1fr 0.1fr 0.9fr 0.1fr; 
 
- }
+  } 
+/* 
+  .progressbar li{
+     font-size:11px;
+ }  */
 
- /* .progressbar li{
-     font-size:10px;
- } */
-
- /* .progressbar li:before {
+ .progressbar li:before {
 content: counter(step);
 counter-increment: step;
-width: 30px;
- height: 30px;
- line-height:30px;
- } */
- /* h1.titlu
+width: 45px;
+ height: 45px;
+ line-height:45px;
+ } 
+  h1.titlu
  {
      font-size:12pt;
  }
  h1.titlu1
  {
      font-size:12pt;
- } */
+ } 
  .Nume p{
   font-size: 15pt;
 }
 
 }
+
+@media screen and (max-width: 952px )
+{
+  .progressbar li{
+    font-size:12px;
+}  
+
+}
+
+@media screen and (max-width: 760px )
+{
+  .progressbar li{
+    font-size:10px;
+}  
+
+}
+
+
 @media screen and (max-width: 635px )
 {
 .continutstyle p {
@@ -348,18 +309,45 @@ font-size: 10px;
 .Nume p{
   font-size: 12pt;
 }
+.progressbar li{
+  font-size:9px;
+} 
+
+.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 40px;
+   height: 40px;
+   line-height:40px;
+   } 
 }
+
+@media screen and (max-width: 570px )
+{
+  .progressbar li{
+    font-size:8px;
+}  
+
+}
+@media screen and (max-width: 505px )
+{
+  .progressbar li{
+    font-size:7px;
+}  
+
+}
+
 
 @media screen and (max-width: 450px)
 {
 .progressbar li{
-  font-size:7px;
+  font-size:6px;
+} 
+
+.grid-container{
+  grid-template-rows: 0.1fr 1.2fr 0.1fr 0.1fr 0.1fr 0.9fr 0.1fr; 
 }
-
-/* .grid-container{
-  grid-template-rows: 0.1fr 1.2fr 0.1fr 0.1fr 0.1fr 0.9fr 0.1fr; */
-
-h1{
+ h1{
 font-size: 10pt;
 }
 
@@ -377,4 +365,13 @@ font-size: 6pt;
 right:2%;
 
 }
+
+.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 37px;
+   height: 37px;
+   line-height:37px;
+   } 
 }
+} 
