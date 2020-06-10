@@ -1,6 +1,6 @@
 <?php
 
-require "header.php";
+require "headerAdmin.php";
 
 ?>
 
@@ -22,8 +22,7 @@ require "header.php";
 
   if (!isset($_SESSION['userId']))
   {
-    echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";
-    //header("Location: ./index.php");
+    echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './indexAdmin.php';</script>";
     exit();
   }
 
@@ -80,7 +79,7 @@ require "header.php";
     $descriere = $descriere["description"];
     echo "<li><span>Dificultate: </span>$dif</li>";
     echo "<li><span>Descriere: </span>$descriere</li>";
-    echo "<li><a href=\"./tutorial.php?tutorialID=$i\" class=\"morebtn\">Deschide tutorialul</a></li>";
+    echo "<li><a href=\"./tutorialAdmin.php?tutorialID=$i\" class=\"morebtn\">Deschide tutorialul</a></li>";
     echo "</ul> </div> </div>";
 
   }

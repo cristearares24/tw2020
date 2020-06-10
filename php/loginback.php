@@ -46,10 +46,18 @@ if (isset($_POST['login-submit']))
 	                        $r = $rez['quizID'];	
 	                        $score = mysqli_query($conn, "INSERT INTO quizresults(id, quizID, score) VALUES ($id, $r, NULL)");	
 		
-	                    }
-                    header("Location: ./index.php?login=success");
-                    exit();
-
+                        }
+                    $type = mysqli_query($conn, "select `user-type` from users where id=$id");
+                    $type = mysqli_fetch_array($type);
+                    $type = $type["user-type"];
+                    if($type == 1) { 
+                        header("Location: ./indexAdmin.php?login=success");
+                        exit();
+                    }
+                    else {  
+                        header("Location: ./index.php?login=success");
+                        exit();
+                        }
                 }
             }
             else

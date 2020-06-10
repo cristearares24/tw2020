@@ -1,6 +1,6 @@
 <?php
 
-require "header.php";
+require "headerAdmin.php";
 
 ?>
 
@@ -15,8 +15,7 @@ require "header.php";
 
         if (!isset($_SESSION['userId']))
         {
-          echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";             
-          // header("Location: ./index.php");
+          echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './indexAdmin.php';</script>";             
           exit();
         }
 

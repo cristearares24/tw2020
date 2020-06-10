@@ -16,11 +16,11 @@ require "header.php";
 <body>
   <?php
 
-  if (!isset($_SESSION['userId']))
-    {
-      header("Location: ./index.php");
-      exit();
-    }
+if (!isset($_SESSION['userId']))
+{
+  echo "<script>alert('Trebuie sa fiti conectat pentru a putea accesa pagina.'); window.location = './index.php';</script>";
+  exit();
+}
 
   require 'dbconnection.php';
 
