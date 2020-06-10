@@ -66,7 +66,7 @@ button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px 0px 0px 25px;
     border: none;
     cursor: pointer;
     width: 25vw;
@@ -83,7 +83,7 @@ button:hover {
     font-family: 'Montserrat';
 
 }
-@media only screen and (max-width: 600px){
+@media screen and (max-width: 600px){
     button{
         width: 45vw;
         font-size: 3vw;
