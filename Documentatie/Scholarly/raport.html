@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset='UTF-8'/>
+	<title>Raport</title>
+	<link rel='stylesheet' href='raport.css'/>
+</head>
+<body>
+	<article>
+		<h1 aria-level="12">GarT</h1>
+		<div id="contentinfo">
+			<section typeof="sa:AuthorsList" id="authors">
+				<h4>Autori:</h4>
+				<ul>
+					<li typeof="sa:ContributorRole" property="schema:author">
+						<span typeof="schema:Person">
+        					<span property="schema:name">Cristea Rares Andrei</span>
+						</span>
+					</li>
+					<li typeof="sa:ContributorRole" property="schema:author">
+						<span typeof="schema:Person">
+        					<span property="schema:name">Dedeaga Delia Stefania</span>
+						</span>
+					  </li>
+					  <li typeof="sa:ContributorRole" property="schema:author">
+						<span typeof="schema:Person">
+        					<span property="schema:name">Popa Alina-Mihaela</span>
+						</span>
+      				</li>
+				</ul>
+			</section>
+			<section property="schema:infoiasi">
+				<h6>Continut:</h6>
+				<ol>
+					<li>Descrierea proiectului</li>
+					<li>Utilizatorul</li>
+					<li>Module principale</li>
+					<li>Detalii de implementare</li>
+					<li>Use cases</li>
+					<li>Modelarea datelor</li>
+					<li>Bibliografie</li>
+				</ol>
+			</section>
+			<section typeof="schema:project" property="schema:web">
+				<h6>Descrierea proiectului:</h6>
+				<p>O aplicatie Web ce ofera suport pentru invatarea interactiva a conceptelor si activitatilor specifice gradinaritului. Pentru fiecare (categorie de) concepte/instrumente specifice, se pun la dispozitie informatii precum semnificatia, tipul, sfaturi practice, contextul de utilizare, plus sugestii privind momentul propice realizarii unor activitati – e.g., insamantare, irigare etc. Sistemul monitorizeaza progresul inregistrat de fiecare utilizator in procesul de invatare, eventual structurata pe niveluri de dificultate. Se genereaza, de asemenea, un clasament al celor mai sarguinciosi utilizatori, disponibil si ca flux de date RSS. 
+				</p>
+			</section>
+			<section>
+				<h6>Utilizatorul:</h6>
+				<p> Aplicația GarT se dechide cu pagină principala. Pagina “Acasă” ne oferă posibilitatea de logare, sau de create a unui cont prin accesarea butonului “Conectare”. Există trei tipuri de utilizatori:  </p>
+                              <p>-guest</p>
+							  <p>-utilizator înregistrat</p>
+							  <p>-administrator</p>
+							  <p>1) Guest: acest tip de utilizator poate accesa doar pagina „Acasă” , de login și/sau pagină de înregistrare. Dacă această nu dorește să își creeze un cont nu poate accesa alte pagini ale aplicației.</p>
+							  <p>2) Utilizator înregistrat: acest tip de utilizator are deja un cont creat și trebuie doar să se logheze pentru a putea utiliza aplicația.</p>
+							  <p>3) Administratorul: acest tip de utilizator este singurul care poate modifică resursele aplicației. Doar administratorul poate să adauge/șteargă un nou tutorial, sau o nouă unealtă, respectiv să facă modificări în baza de date. </p>
+
+		</section>
+			<section>
+				<h6>Module Principale:</h6>
+				<p>Website-ul are urmatoarele pagini:</p>
+					<ul>
+					<li>Paginile Login/Inregistrare: aceste pagini sunt responsabile cu înregistrarea și autentificarea utilizatorilor. Aplicația se deschide cu pagina de login, iar dacă utilizatorul nu este înregisrat își poate crea un cont accesând pagina de înregistrare prin apăsarea butonului “register”.
+						</li>
+						<li>Paginile cu resurse 
+		
+						</li>
+						<li>Pagina Acasă: contine numele aplicatiei, calea catre celelate pagini la care avem acces doar printr-un cont creat, un citat specific aplicatiilor pentru gradinarit, un slider cu imagini informative si alte detalii pe care utilizatorul le poate vizualiza.
+						</li>
+						<li>Pagina Tutoriale: contine un numar de tutoriale pe care utilizatorul le poate accesa doar pe baza unui cont. Tutorialele sunt pe nivele de dificultate si contin si o descriere. Pentru a deschide tutorialul apasam butonul „Deschide tutorialul”. Fiecare tutorial parcurs are la final un „Quiz” pentru ca utilizatorul sa isi testeze cunostiintele. Acesta nu va putea merge mai departe decat daca a completat tutorialele cu o dificultate mai mica, si cu un scor de peste 50% corect. 
+							Daca un quiz a fost completat si promovat vom primi un mesaj sugestiv pentru a continua cu urmatorul tutorial, daca nu vom repeta quiz-ul. 
+							Rezultatele vom fi afisate in pagina „Profilul meu”.
+							
+						</li>
+						<li>Pagina Profilul meu: contine o imagine default anonima, pentru a pastra ascunsa infatisarea utilizatorilor, datele personale minime pentru a crea un cont(nume/prenume, email/ rezultatul in procente al evolutiei. In plus avem o sectiune speciala progresului/per tutorial parcurs si un top al primilor 5 cei mai buni utilizatori. Acest top este disponibil si ca raport RSS.
+						</li>
+						<li>
+							Pagina Unelte: contine denumirea uneltelor, poze sugestive si descrierea acestora in detaliu. 
+						</li>
+					</ul>
+			</section>
+			<section>
+				<h6>Detalii de implementare:</h6>
+				<p>Aplicația GarT utilizează următoarele tehnologii:
+                      <ul>
+<li>					  Pentru partea de front-end aplicația utilizează:  </li>
+<ol>
+<li>	Html - pentru a reda conținutul paginii</li>
+<li>Css - pentru a da stil conținutului</li></ol>
+<li>	Pentru parte de back-end aplicația utilizează:</li>
+<ol><li>mySql - pentru baza de date care conține conturile utilizatorilor si restul datelor</li>
+<li>Php - pentru interacțiunea dintre front-end, baza de date </li>
+<li>Ajax – pentru actualizarea asincrona a paginilor prin schimbul de date cu partea de server</li></ol>
+</ul>
+
+
+				</p>
+				
+			</section>
+			<section>
+				<h6>Use cases:</h6>
+				<ul>
+					<li>Dacă un utilizator vrea să se logheze și nu se găsește o potrivire între informațiile primite și ce se află în baza de date, aplicația il va trimite pe Pagina “Acasă“, iar in URL va gasi o eroare pentru a intelege de ce nu s-a putut loga. </li>
+					<li>Dacă un utilizator vrea să se înregistreze și dă informațiile în următoare le moduri:
+<ol><li> Nu completează toate câmpurile, aplicația va afișa un mesaj în acest sens: „ Toate câmpurile sunt obligatorii”.</li>
+
+<li> Cele 2 câmpuri destinate parolei nu corespund, aplicația va afișa un mesaj în acest sens: „Parolele nu corespund”.</li>
+</ol></li>
+<li>Dacă un utilizator cunoaște calea spre o pagina care este accesibila doar dupa login, aplicația nu-i va permite acest lucru, afișându-i un mesaj de eroare. „Trebuie să te loghezi pentru a accesa această pagină!”</li>
+<li>Dacă un utilizator doreste sa citeasca un tutorial, intra in pagina de tutoriale, citeste tutorialul si apoi are 2 variante: poate continua prin completarea quiz-ului, sau poate iesi. </li>
+<li>Dacă un utilizator doreste sa isi vada pagina de profil, intra pe Pagina Profilul Meu si isi va gasi toate datele si progresul/evolutia.  </li>
+<li>Dacă un utilizator doreste sa vizualizeze pagina de unelte, intra pe Pagina Unelte si vizualizeaza toate datele.  </li>
+
+<li>In momentul in care utilizatorul este Administrator paginile sunt diferite:
+	<ol><li> Pe pagina Unelte administratorul poate modifica datele si anume adaugare/stergere date. </li>
+	
+	<li> Pe pagina Tutoriale administratorul poate modifica datele si anume adaugare/stergere date.</li>
+	</ol></li>
+
+				</ul>
+			</section>
+			<section>
+				<h6>Modelarea datelor:</h6>
+				<p>Această aplicație poate rula pe orice sistem de operare care are instalat un server Apache. Acest server ține aplicația online, totodată el are un sistem de management al unei baze de date și anume MySQL și un interpretor al codului pentru a afișa continuțul dinamic și anume, PHP.
+					Stocarea persistența a datelor se realizează cu ajutorul unei baze de date care conține 8 tabele:<ol>
+<li>Tabela Users: folosită pentru login/register.</li>
+<li>Tabela Unelte: conține toate datele despre uneltele din aplicație.</li>
+<li>Tabela Tutorials: conține toate datele despre tutorialele existente în aplicație.</li>
+<li>Tabela Steps: conține pașii ce vor fi prezenți în tutoriale.</li>
+<li>Tabela Quizresults: conține rezultatele de la quiz-urile completate de utilizatori.</li>
+<li>Tabela Questions: conține întrebările din quiz-uri.</li>
+<li>Tabela Answers: conține răspunsurile corecte la quiz-uri.</li>
+</ol>
+</p>
+				
+			</section>
+				
+			<section>
+				<h6>Bibliografie:</h6>
+					<ul>
+						<li>https://developer.mozilla.org/en-US/</li>
+						<li>http://www.rssboard.org/rss-specification</li>
+						<li>https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms</li>
+					</ul>
+			</section>
+		</div>
+	</article>
+</body>
+</html>
